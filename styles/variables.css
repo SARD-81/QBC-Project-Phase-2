@@ -1,0 +1,15 @@
+@import url(./font.css);
+:root {
+  --primary-color: #2c7ef8;
+  --primary-dark-color: #3a86f8;
+  --primary-hover-light-color: #075cd9;
+  --primary-hover-dark-color: #6ba4fa;
+  --on-primary-light-color: #fff;
+  --on-primary-dark-color: #fff;
+  --background-Dark-color: #040810;
+  --on-background-light-color: #191c1e;
+  --on-background-dark-color: #e6e9ef;
+  --on-Error-color: #e63946;
+  --on-Success-color: #90f677;
+  --primary-font: YekanBakhBolSem;
+}

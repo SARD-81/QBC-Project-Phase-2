@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "YekanBakhReg";
+  src: url(../assets/fonts/YekanBakhFaNum/YekanBakhFaNum-Regular.ttf);
+}
+
+@font-face {
+  font-family: "YekanBakhMed";
+  src: url(../assets/fonts/YekanBakhFaNum/YekanBakhFaNum-Black.ttf);
+}
+
+@font-face {
+  font-family: "YekanBakhBol";
+  src: url(../assets/fonts/YekanBakhFaNum/YekanBakhFaNum-Bold.ttf);
+}
+
+@font-face {
+  font-family: "YekanBakhBolSem";
+  src: url(../assets/fonts/YekanBakhFaNum/YekanBakhFaNum-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Dana";
+  src: url(../assets/fonts/Dana/Dana-Regular.ttf);
+}
