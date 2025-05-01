@@ -1,0 +1,116 @@
+/*imported css*/
+@import url("./font.css");
+@import url("./variables.css");
+
+/*start main styles*/
+@media (max-width: 426px) {
+  body {
+    flex-direction: column;
+  }
+}
+/*finish main styles*/
+
+/* start mobile nav styles */
+@media (max-width: 426px) {
+  #nav {
+    background-color: #fff;
+    margin: 1rem;
+    display: block;
+  }
+  #min-nav-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  #min-nav-container-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  #min-nav-container-left {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    grid-column: 2;
+  }
+  #min-nav-container-left-heading {
+    margin: auto;
+    font-family: "YekanBakhBolSem";
+  }
+}
+/* finish mobile nav styles */
+
+/* start aside styles*/
+@media (max-width: 426px) {
+  #aside {
+    box-shadow: none;
+    padding-top: 0;
+    padding-right: 0;
+    margin: 0.75rem 1rem;
+  }
+
+  .sidebar-modal {
+    display: none;
+  }
+
+  .sidebar-modal:target {
+    display: block;
+    background-color: #fff;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2.5rem;
+}
+
+  #menu-items-container {
+    padding-bottom: 2rem;
+  }
+
+  #menu-items-container .head-modal {
+    display: block;
+    margin-bottom: 2.5rem;
+  }
+
+  #menu-items-container .close {
+    position: absolute;
+    top: 1.5rem;
+    right: 15rem;
+    display: inline-block;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+
+  #menu-items-container .menu-items {
+    margin-right: 0.5rem;
+  }
+}
+/* finish aside styles */
+
+/*start main styles*/
+@media (max-width: 426px) {
+  #main {
+    max-width: 350px;
+    margin: auto;
+  }
+
+  #personal-info {
+    padding-bottom: 2.5rem;
+  }
+  #add-tasks-btn {
+    margin-bottom: 0.5rem;
+  }
+  #img-holder{
+    text-align: center;
+    line-height: 1.5rem;
+  }
+}
+/*finish main styles*/
