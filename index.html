@@ -39,6 +39,7 @@
               >سلام، رویا
             </span>
             <span
+              id="date"
               class="font-[YekanBakhReg] font-semibold text-[14px] text-[#5C5C5C]"
               >سه‌شنبه، ۵ بهمن ۱۴۰۲</span
             >
@@ -470,7 +471,10 @@
       </div>
     </aside>
     <!-- Main Design (tasks) -->
-    <main id="main" class="w-full max-w-3xl inline-block flex flex-column mt-22 mr-25">
+    <main
+      id="main"
+      class="w-full max-w-3xl inline-block flex flex-column mt-22 mr-25"
+    >
       <!-- the section of adding tasks -->
       <div id="main-header">
         <h2
@@ -478,7 +482,9 @@
         >
           تسک‌های امروز
         </h2>
-        <p class="pb-6 font-[YekanBakhReg] font-medium text-[14px] text-[#696969]">
+        <p
+          class="pb-6 font-[YekanBakhReg] font-medium text-[14px] text-[#696969]"
+        >
           تسکی برای امروز نداری!
         </p>
         <div
@@ -514,10 +520,21 @@
             >
           </div>
         </div>
-        <div id="img-holder" class="justify-self-center flex flex-col items-center opacity-50">
-          <img src="./assets/images/Frame 1000005523.png" class="w-[232px] h-[283px]" alt="tasks-holder">
-          <h3 class="pb-1 font-[YekanBakhBol] font-black text-[16px]">چه کارهایی امروز برای انجام داری؟</h3>
-          <p class="font-[YekanBakhReg] font-normal text-[14px]"">میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!</p>
+        <div
+          id="img-holder"
+          class="justify-self-center flex flex-col items-center opacity-50"
+        >
+          <img
+            src="./assets/images/Frame 1000005523.png"
+            class="w-[232px] h-[283px]"
+            alt="tasks-holder"
+          />
+          <h3 class="pb-1 font-[YekanBakhBol] font-black text-[16px]">
+            چه کارهایی امروز برای انجام داری؟
+          </h3>
+          <p class="font-[YekanBakhReg] font-normal text-[14px]">
+            میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
+          </p>
         </div>
       </div>
       <!-- the section of task that user add them -->
@@ -526,5 +543,6 @@
       <div id="done-tasks-container"></div>
     </main>
     <script src="./vendor/FontAwesome5/all.min.js"></script>
+    <script src="./scripts/main.js"></script>
   </body>
 </html>
