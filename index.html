@@ -5,762 +5,523 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/font.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
     <link rel="stylesheet" href="./vendor/FontAwesome5/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>کوئرا لیست</title>
   </head>
-  <body>
-    <!-- NavBar Design -->
-    
-      <!--NavBar Desktop Design -->
-      <div
-        id="max-nav-container"
-        class="w-full flex justify-between items-center max-[360px]:hidden"
-      >
-        <div id="nav-right">
-          <ul class="flex flex-row gap-20 items-center">
-            <li
-              class="text-[20px] font-semibold font-[YekanBakhBolSem]"
-              id="nav-right-logo"
-            >
-              کوئرا لیست
-            </li>
-            <li class="font-[YekanBakhReg] text-(--primary-color)">
-              <a href="./index.html">صفحه اصلی</a>
-            </li>
-            <li class="font-[YekanBakhReg]">
-              <a href="./about-me.html">درباره ما</a>
-            </li>
-            <li class="font-[YekanBakhReg]">
-              <a href="./contact-me.html">ارتباط با ما</a>
-            </li>
-          </ul>
-        </div>
-        <div id="nav-left" class="flex gap-4 items-center">
-          <a
-            class="inline-block py-0 px-5 font-[YekanBakhReg] font-semibold text-[16px] text-(--on-primary-light-color) bg-(--primary-color) rounded-md leading-10 text-center"
-            href=""
-            >ورود به اپلیکیشن</a
-          >
-          <a href=""
-            ><img
-              src="./assets/icons/Frame 1000005337.svg"
-              alt="dark-mode-logo"
-          /></a>
-        </div>
-      </div>
-      <!--NavBar Mobile Design -->
-      <div
-        id="min-nav-container"
-        class="hidden max-[360px]:flex max-[360px]:items-center max-[360px]:justify-between"
-      >
-        <div
-          id="min-nav-container-right"
-          class="max-[360px]:absolute max-[360px]:right-3"
-        >
-          <a class="" id="mobile-menu" href=""
+  <body class="bg-[#FEFEFE] flex">
+    <!-- NavBar Design (just for mobile) -->
+    <nav id="nav" class="hidden">
+      <!--NavBar Container-->
+      <div id="min-nav-container">
+        <div id="min-nav-container-right">
+          <a id="mobile-menu" href="#main-menu-container"
             ><img src="./assets/icons/Frame 12160.png" alt="three-line-icon"
           /></a>
         </div>
-        <div id="min-nav-container-left" class="mx-auto">
-          <h1
-            id="mobile-heading"
-            class="max-[360px]:mx-auto max-[360px]:font-[YekanBakhBolSem] max-[360px]:text-center"
-          >
-            کوئرا لیست
-          </h1>
+        <div id="min-nav-container-left">
+          <h1 id="min-nav-container-left-heading">کوئرا لیست</h1>
         </div>
       </div>
     </nav>
-    <!-- Header Design -->
-    <header id="header" class="w-full overflow-hidden">
-      <div
-        id="banner"
-        class="z-20 relative w-full flex flex-col justify-center items-center bg-linear-to-t from-[#fff] to-[#EBF3FF] text-center"
-      >
-        <p
-          id="banner-txt"
-          class="z-20 pt-28 font-[Dana] font-normal text-[46px] max-[360px]:text-[24px] max-[360px]:px-10 max-[360px]:pt-18"
-        >
-          تمرکز رو وارد زندگیت کن
-        </p>
-        <h2
-          id="banner-heading"
-          class="z-20 pt-3 font-[Dana] font-black text-[64px] max-[360px]:px-4 max-[360px]:text-[28px]"
-        >
-          به سمت اهدافت اوج بگیر
-        </h2>
-        <img
-          class="z-20 absolute right-[40%] bottom-[37%] max-[360px]:right-[33%] max-[360px]:top-[45%] max-[360px]:w-[100px]"
-          src="./assets/icons/Vector 74.png"
-          alt=""
-        />
-        <p
-          id="banner-desc"
-          class="z-20 leading-8 mx-90 pt-20 font-[YekanBakhReg] font-normal text-[20px] max-[360px]:leading-5 max-[360px]:mx-4 max-[360px]:pt-[50px] max-[360px]:text-[12px]"
-        >
-          زمان در یک روز برای ما محدود است، اما مهمترین کار این است که چگونه از
-          آن استفاده می‌کنیم. با اپلیکیشن کوییرا لیست، زمان خود را با هدف و
-          برنامه‌ریزی موثر سپری کنید."
-        </p>
-        <div
-          id="cta"
-          class="z-20 pt-10 pb-4 flex gap-4 items-center justify-center max-[360px]:!mx-[10px]"
-        >
-          <a
-            class="z-20 px-7 py-1 font-[YekanBakhReg] font-semibold text-[16px] text-(--on-primary-light-color) bg-(--primary-color) rounded-md leading-10 text-center max-[360px]:px-8 max-[360px]:text-[12px]"
-            href=""
-            >ورود به اپلیکیشن</a
-          >
-          <a
-            class="z-20 px-15 py-1 font-[YekanBakhReg] font-semibold text-[16px] text-(--primary-color) bg-[#EBF3FE] rounded-md leading-10 text-center max-[360px]:px-11 max-[360px]:text-[12px]"
-            href=""
-            >درباره ما</a
-          >
-        </div>
-        <div id="circle-container" class="z-10 w-full">
-          <div
-            id="circle"
-            class="z-10 absolute left-[3%] top-[10%] w-[452px] h-[452px] bg-linear-to-t from-[#fff] to-[#EBF3FF] rounded-full max-[360px]:right-[65%] max-[360px]:top-[3%] max-[360px]:w-[228px] max-[360px]:h-[228px]"
-          ></div>
-          <div
-            id="circle"
-            class="z-10 absolute left-[73%] top-[30%] w-[452px] h-[452px] bg-linear-to-t from-[#fff] to-[#EBF3FF] rounded-full max-[360px]:hidden"
-          ></div>
-        </div>
-        <img
-          class="z-20 absolute left-[15%] bottom-[39%] max-[360px]:w-[24px] max-[360px]:h-[24px] max-[360px]:bottom-[45%]"
-          src="./assets/icons/Star 2 (Stroke).png"
-          alt=""
-        />
-        <img
-          class="z-20 absolute right-[25%] top-[15%] max-[360px]:w-[24px] max-[360px]:h-[24px] max-[360px]:top-[7%] max-[360px]:right-[10%]"
-          src="./assets/icons/Star 2 (Stroke).png"
-          alt=""
-        />
-      </div>
-    </header>
-    <!-- Main Design -->
-    <main id="main" class="w-full overflow-hidden">
-      <div
-        id="main-container"
-        class="grid justify-center items-center text-center gap-y-20 w-full max-[360px]:flex max-[360px]:gap-y-12 max-[360px]:flex-col"
-      >
-        <!-- First place -->
-        <div id="img-holder" class="max-[360px]:mt-5">
-          <!-- Desktop img -->
-          <img
-            class="max-[360px]:hidden"
-            src="./assets/images/image 39129 (1).png"
-            alt=""
-          />
-          <!-- Mobile img -->
-          <img
-            class="hidden max-[360px]:inline-block max-[360px]:px-4"
-            src="./assets/images/image 39129.png"
-            alt=""
-          />
-        </div>
-        <!-- Seconde place -->
-        <div id="feature">
-          <h3
-            id="feature-heading"
-            class="font-[Dana] font-semibold text-[40px] max-[360px]:text-[20px]"
-          >
-            ویژگی‌های اپلیکیشن کوئرالیست
-          </h3>
-          <!-- Desktop Desc -->
-          <p
-            id="feature-desc"
-            class="pt-4 font-[YekanBakhReg] text-[#444749] font-normal text-[18px] max-[360px]:hidden"
-          >
-            ما توی تیم کوئرا لیست بر اساس بازخوردهای شما و جدیدترین ترندهای
-            بازار <br />همواره در تلاشیم تا بهترین تجربه کاربری رو براتون به
-            ارمغان بیاریم.
-          </p>
-          <!-- Mocile Desc -->
-          <p
-            id="feature-desc"
-            class="hidden max-[360px]:block max-[360px]:pt-4 max-[360px]:font-[YekanBakhReg] max-[360px]:text-[#444749] max-[360px]:font-normal max-[360px]:text-[10px]"
-          >
-            زمان در یک روز برای ما محدود است، اما مهمترین کار این است که چگونه
-            از<br />
-            آن استفاده می‌کنیم. با اپلیکیشن کوییرا لیست، زمان خود را با هدف و<br />
-            برنامه‌ریزی موثر سپری کنید."
-          </p>
-          <div id="feature-chart" class="pt-21 max-[360px]:pt-12">
-            <ul
-              class="flex justify-center flex-row gap-25 max-[360px]:flex-wrap max-[360px]:gap-10"
+    <!-- Aside Design (panel) -->
+    <aside
+      id="aside"
+      class="inline-block m-7 pl-15 pr-7 pt-15 bg-[#FFF] [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)]"
+    >
+      <!-- personal info section -->
+      <div id="personal-info" class="pb-20">
+        <div id="avatar-cont" class="flex items-center gap-4">
+          <img src="./assets/avatar/Ellipse 135 (2).png" alt="" />
+          <div id="avatar-desc" class="flex flex-col pb-2">
+            <span class="pb-1 font-[YekanBakhBol] font-extrabold text-[18px]"
+              >سلام، رویا
+            </span>
+            <span
+              class="font-[YekanBakhReg] font-semibold text-[14px] text-[#5C5C5C]"
+              >سه‌شنبه، ۵ بهمن ۱۴۰۲</span
             >
-              <li class="flex justify-center items-center flex-col gap-4">
-                <img
-                  class="max-[360px]:w-[16px] max-[360px]:h-[16px]"
-                  src="./assets/icons/Frame 427321293 (1).svg"
-                  alt=""
-                />
-                <h4
-                  class="font-[Dana] font-bold text-[20px] max-[360px]:text-[12px]"
-                >
-                  رابط کاربری جذاب
-                </h4>
-                <p
-                  class="font-[YekanBakhReg] leading-8 font-normal text-[14px] text-[#444749] max-[360px]:text-[10px] max-[360px]:leading-5"
-                >
-                  اگه از سردرگمی و بی برنامگی<br />
-                  خسته شدی این اپلیکیشن<br />
-                  مخصوص خودته!
-                </p>
-              </li>
-              <li class="flex justify-center items-center flex-col gap-[16px]">
-                <img
-                  class="w-[48px] h-[48px] max-[360px]:w-[16px] max-[360px]:h-[16px]"
-                  src="./assets/icons/Frame 427321293.svg"
-                  alt=""
-                />
-                <h4
-                  class="font-[Dana] font-bold text-[20px] max-[360px]:text-[12px]"
-                >
-                  قابلیت دسته‌بندی کارها
-                </h4>
-                <p
-                  class="font-[YekanBakhReg] leading-8 font-normal text-[14px] text-[#444749] max-[360px]:text-[10px] max-[360px]:leading-5"
-                >
-                  اگه از سردرگمی و بی برنامگی<br />
-                  خسته شدی این اپلیکیشن<br />
-                  مخصوص خودته!
-                </p>
-              </li>
-              <li class="flex justify-center items-center flex-col gap-[16px]">
-                <img
-                  class="w-[48px] h-[48px] max-[360px]:w-[16px] max-[360px]:h-[16px]"
-                  src="./assets/icons/Frame 427321293 (2).svg"
-                  alt=""
-                />
-                <h4
-                  class="font-[Dana] font-bold text-[20px] max-[360px]:text-[12px]"
-                >
-                  دسترسی آسان
-                </h4>
-                <p
-                  class="font-[YekanBakhReg] leading-8 font-normal text-[14px] text-[#444749] max-[360px]:text-[10px] max-[360px]:leading-5"
-                >
-                  اگه از سردرگمی و بی برنامگی<br />
-                  خسته شدی این اپلیکیشن<br />
-                  مخصوص خودته!
-                </p>
-              </li>
-              <li class="flex justify-center items-center flex-col gap-[16px]">
-                <img
-                  class="w-[48px] h-[48px] max-[360px]:w-[16px] max-[360px]:h-[16px]"
-                  src="./assets/icons/Frame 427321293 (3).svg"
-                  alt=""
-                />
-                <h4
-                  class="font-[Dana] font-bold text-[20px] max-[360px]:text-[12px]"
-                >
-                  پشتیبانی آنلاین
-                </h4>
-                <p
-                  class="font-[YekanBakhReg] leading-8 font-normal text-[14px] text-[#444749] max-[360px]:text-[10px] max-[360px]:leading-5"
-                >
-                  اگه از سردرگمی و بی برنامگی<br />
-                  خسته شدی این اپلیکیشن<br />
-                  مخصوص خودته!
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- third place -->
-        <div
-          id="download-box"
-          class="pt-25 mx-auto flex flex-row gap-27 max-[360px]:pt-7"
-        >
-          <div
-            id="download-box-right"
-            class="flex flex-col items-start max-[360px]:items-center max-[360px]:justify-center"
-          >
-            <p
-              class="font-[YekanBakhReg] font-normal text-[18px] text-[#444749] max-[360px]:text-[10px]"
-            >
-              اپلیکیشن اندروید و IOS
-            </p>
-            <h2
-              class="pt-2 font-[Dana] font-bold text-[40px] max-[360px]:text-[20px]"
-            >
-              دانلود اپلیکیشن
-            </h2>
-            <img
-              class="hidden max-[360px]:block max-[360px]:mt-7"
-              src="./assets/images/Mobile_clay_mockup.png"
-              alt=""
-            />
-            <p
-              class="block pt-5 font-[YekanBakhReg] font-normal text-[18px] text-[#444749] text-right max-[360px]:text-[10px] max-[360px]:text-center"
-            >
-              کاربران اندروید می‌توانند اپلیکیشن کوئرالیست را از استورهای<br
-                class="max-[360px]:hidden"
-              />
-              معتبر اندروید دانلود نمایند. همچنین کاربران سیستم عامل اپل<br
-                class="max-[360px]:hidden"
-              />
-              علاوه بر دانلود نرم‌افزار از اپل‌استور می‌توانند از نسخه مبتنی
-              بر<br class="max-[360px]:hidden" />
-              وب آن استفاده نمایند.
-            </p>
-            <p
-              class="block font-[YekanBakhReg] font-normal text-[18px] text-[#444749] text-right w-[472px] max-[360px]:text-[10px] max-[360px]:w-[312px] max-[360px]:text-center"
-            >
-              همچنین کاربران سیستم عامل اپل علاوه بر دانلود نرم‌افزار از
-              اپل‌استور می‌توانند از نسخه مبتنی بر وب آن استفاده نمایند.
-            </p>
-            <a
-              class="pt-14 pr-5 font-[YekanBakhMed] font-bold text-[18px] text-right text-(--primary-color) max-[360px]:text-[12px] max-[360px]:pr-0 max-[360px]:pt-8"
-              href=""
-              >ورود به اپلیکیشن<span
-                class="inline-block p-3 align-[-4px] max-[360px]:p-2 max-[360px]:align-[-3px]"
-                ><i class="fas fa-arrow-left"></i></span
-            ></a>
-          </div>
-          <div
-            id="download-box-left"
-            class="relative max-[360px]:hidden max-[360px]:static"
-          >
-            <img class="z-[-1]" src="./assets/images/image 391291.png" alt="" />
-            <img
-              class="absolute top-10 right-15"
-              src="./assets/images/your_screen.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <!-- fourth place -->
-        <div
-          id="comment"
-          class="overflow-hidden pt-25 flex flex-col justify-center items-center max-[360px]:pt-5"
-        >
-          <h2 class="font-[Dana] font-bold text-[40px] max-[360px]:text-[20px]">
-            نظرات کاربران
-          </h2>
-          <p
-            class="pt-6 !mx-auto font-[YekanBakhReg] font-normal text-[18px] text-[#444749] max-[360px]:text-[10px]"
-          >
-            بیش از یک دهه است که کوئرا لیست به مردم در سراسر جهان کمک<br />
-            می‌کند تا سازماندهی شوند و به اهداف خود برسند.
-          </p>
-          <div id="pepole-comment" class="mx-auto pt-11 flex flex-row">
-            <div class="text-right flex flex-col max-[360px]:hidden">
-              <div id="people1" class="flex flex-col gap-4 p-8">
-                <div id="avatar-cont" class="flex items-center gap-4">
-                  <img src="./assets/avatar/Ellipse 135.png" alt="" />
-                  <div id="avatar-desc" class="flex flex-col">
-                    <span
-                      class="font-[Dana] font-bold text-[15px] max-[360px]:text-[14px]"
-                      >رویا ملکی</span
-                    >
-                    <span
-                      class="font-[YekanBakhReg] font-normal text-[14px] text-[#5C5C5C] max-[360px]:text-[12px]"
-                      >مهندس نرم افزار دیجی‌کالا</span
-                    >
-                  </div>
-                </div>
-                <p
-                  class="font-[YekanBakhReg] leading-7 font-light text-[16px] text-[#444749] max-[360px]:leading-2 max-[360px]:text-[12px]"
-                >
-                  تجربه من با کوئرا لیست زندگی من رو تغییر<br
-                    class="max-[360px]:hidden"
-                  />
-                  داده است. من از دنیایی اومدم که همه چیز<br
-                    class="max-[360px]:hidden"
-                  />
-                  من در اکسل بود. استفاده از کوئرا لیست به<br
-                    class="max-[360px]:hidden"
-                  />
-                  ما این امکان رو می‌دهد که باهوش‌تر،<br
-                    class="max-[360px]:hidden"
-                  />
-                  سریع‌تر و سازمان دهی شده تر زندگی کنیم<br
-                    class="max-[360px]:hidden"
-                  />
-                  و هم چینین همه چیز به گونه‌ای ساده<br
-                    class="max-[360px]:hidden"
-                  />
-                  تنظیم شده و میتونیم از یکپارچگی اطلاعات<br
-                    class="max-[360px]:hidden"
-                  />
-                  و دیتاها لذت ببریم.
-                </p>
-              </div>
-              <div id="people2" class="flex flex-col gap-4 p-8">
-                <div id="avatar-cont" class="flex items-center gap-4">
-                  <img src="./assets/avatar/Ellipse 135 (1).png" alt="" />
-                  <div id="avatar-desc" class="flex flex-col">
-                    <span
-                      class="font-[Dana] font-bold text-[15px] max-[360px]:text-[14px]"
-                      >رویا ملکی</span
-                    >
-                    <span
-                      class="font-[YekanBakhReg] font-normal text-[14px] text-[#5C5C5C] max-[360px]:text-[12px]"
-                      >مهندس نرم افزار دیجی‌کالا</span
-                    >
-                  </div>
-                </div>
-                <p
-                  class="font-[YekanBakhReg] leading-7 font-light text-[16px] text-[#444749] max-[360px]:text-[12px]"
-                >
-                  تجربه من با کوئرا لیست زندگی من رو تغییر<br
-                    class="max-[360px]:hidden"
-                  />
-                  داده است. من از دنیایی اومدم که همه چیز<br
-                    class="max-[360px]:hidden"
-                  />
-                  من در اکسل بود. استفاده از کوئرا لیست به<br
-                    class="max-[360px]:hidden"
-                  />
-                  ما این امکان رو می‌دهد که سریع تر باشیم
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="text-right flex flex-col max-[360px]:flex-row max-[360px]:justify-center max-[360px]:items-center"
-            >
-              <div
-                id="people3"
-                class="flex flex-col gap-4 p-8 max-[360px]:hidden"
-              >
-                <div id="avatar-cont" class="flex items-center gap-4">
-                  <img src="./assets/avatar/Ellipse 136.png" alt="" />
-                  <div id="avatar-desc" class="flex flex-col">
-                    <span
-                      class="font-[Dana] font-bold text-[15px] max-[360px]:text-[14px]"
-                      >رویا ملکی</span
-                    >
-                    <span
-                      class="font-[YekanBakhReg] font-normal text-[14px] text-[#5C5C5C] max-[360px]:text-[12px]"
-                      >مهندس نرم افزار دیجی‌کالا</span
-                    >
-                  </div>
-                </div>
-                <p
-                  class="font-[YekanBakhReg] leading-7 font-light text-[16px] text-[#444749] max-[360px]:leading-5 max-[360px]:text-[12px]"
-                >
-                  تجربه من با کوئرا لیست زندگی من رو تغییر<br
-                    class="max-[360px]:hidden"
-                  />
-                  داده است. من از دنیایی اومدم که همه چیز<br
-                    class="max-[360px]:hidden"
-                  />
-                  من در اکسل بود. استفاده از کوئرا لیست به<br
-                    class="max-[360px]:hidden"
-                  />
-                  ما این امکان رو می‌دهد که سریع تر باشیم
-                </p>
-              </div>
-              <div id="people4" class="flex flex-col gap-4 p-8">
-                <div id="avatar-cont" class="flex items-center gap-4">
-                  <img src="./assets/avatar/Ellipse 135 (2).png" alt="" />
-                  <div id="avatar-desc" class="flex flex-col">
-                    <span
-                      class="font-[Dana] font-bold text-[15px] max-[360px]:text-[14px]"
-                      >رویا ملکی</span
-                    >
-                    <span
-                      class="font-[YekanBakhReg] font-normal text-[14px] text-[#5C5C5C] max-[360px]:text-[12px]"
-                      >مهندس نرم افزار دیجی‌کالا</span
-                    >
-                  </div>
-                </div>
-                <p
-                  class="font-[YekanBakhReg] leading-7 font-light text-[16px] text-[#444749] max-[360px]:text-[12px]"
-                >
-                  تجربه من با کوئرا لیست زندگی من رو تغییر<br
-                    class="max-[360px]:hidden"
-                  />
-                  داده است. من از دنیایی اومدم که همه چیز<br
-                    class="max-[360px]:hidden"
-                  />
-                  من در اکسل بود. استفاده از کوئرا لیست به<br
-                    class="max-[360px]:hidden"
-                  />
-                  ما این امکان رو می‌دهد که باهوش‌تر،<br
-                    class="max-[360px]:hidden"
-                  />
-                  سریع‌تر و سازمان دهی شده تر زندگی کنیم<br
-                    class="max-[360px]:hidden"
-                  />
-                  و هم چینین همه چیز به گونه‌ای ساده<br
-                    class="max-[360px]:hidden"
-                  />
-                  تنظیم شده و میتونیم از یکپارچگی اطلاعات<br
-                    class="max-[360px]:hidden"
-                  />
-                  و دیتاها لذت ببریم.
-                </p>
-              </div>
-            </div>
-
-            <div class="text-right flex flex-col max-[360px]:hidden">
-              <div id="people5" class="flex flex-col gap-4 p-8">
-                <div id="avatar-cont" class="flex items-center gap-4">
-                  <img src="./assets/avatar/Ellipse 136 (1).png" alt="" />
-                  <div id="avatar-desc" class="flex flex-col">
-                    <span
-                      class="font-[Dana] font-bold text-[15px] max-[360px]:text-[14px]"
-                      >رویا ملکی</span
-                    >
-                    <span
-                      class="font-[YekanBakhReg] font-normal text-[14px] text-[#5C5C5C] max-[360px]:text-[12px]"
-                      >مهندس نرم افزار دیجی‌کالا</span
-                    >
-                  </div>
-                </div>
-                <p
-                  class="font-[YekanBakhReg] leading-7 font-light text-[16px] text-[#444749] max-[360px]:text-[12px]"
-                >
-                  تجربه من با کوئرا لیست زندگی من رو تغییر<br
-                    class="max-[360px]:hidden"
-                  />
-                  داده است. من از دنیایی اومدم که همه چیز<br
-                    class="max-[360px]:hidden"
-                  />
-                  من در اکسل بود. استفاده از کوئرا لیست به<br
-                    class="max-[360px]:hidden"
-                  />
-                  ما این امکان رو می‌دهد که باهوش‌تر،<br
-                    class="max-[360px]:hidden"
-                  />
-                  سریع‌تر و سازمان دهی شده تر زندگی کنیم<br
-                    class="max-[360px]:hidden"
-                  />
-                  و هم چینین همه چیز به گونه‌ای ساده<br
-                    class="max-[360px]:hidden"
-                  />
-                  تنظیم شده و میتونیم از یکپارچگی اطلاعات<br
-                    class="max-[360px]:hidden"
-                  />
-                  و دیتاها لذت ببریم.
-                </p>
-              </div>
-              <div id="people6" class="flex flex-col gap-4 p-8">
-                <div id="avatar-cont" class="flex items-center gap-4">
-                  <img src="./assets/avatar/Ellipse 136 (2).png" alt="" />
-                  <div id="avatar-desc" class="flex flex-col">
-                    <span
-                      class="font-[Dana] font-bold text-[15px] max-[360px]:text-[14px]"
-                      >رویا ملکی</span
-                    >
-                    <span
-                      class="font-[YekanBakhReg] font-normal text-[14px] text-[#5C5C5C] max-[360px]:text-[12px]"
-                      >مهندس نرم افزار دیجی‌کالا</span
-                    >
-                  </div>
-                </div>
-                <p
-                  class="font-[YekanBakhReg] leading-7 font-light text-[16px] text-[#444749] max-[360px]:text-[12px]"
-                >
-                  تجربه من با کوئرا لیست زندگی من رو تغییر<br
-                    class="max-[360px]:hidden"
-                  />
-                  داده است. من از دنیایی اومدم که همه چیز<br
-                    class="max-[360px]:hidden"
-                  />
-                  من در اکسل بود. استفاده از کوئرا لیست به<br
-                    class="max-[360px]:hidden"
-                  />
-                  ما این امکان رو می‌دهد که سریع تر باشیم
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            id="btn"
-            class="mx-auto pt-12 flex flex-row gap-5 max-[360px]:pt-5"
-          >
-            <img
-              class="block"
-              src="./assets/icons/square Buttons (1).png"
-              alt=""
-            />
-            <img class="block" src="./assets/icons/square Buttons.png" alt="" />
           </div>
         </div>
       </div>
-    </main>
-    <!-- Footer Design -->
-    <footer id="footer" class="w-full">
-      <div
-        id="footer-container"
-        class="mx-10 mt-38 w-full flex flex-col items-center justify-center max-[360px]:mx-auto max-[360px]:mt-14"
-      >
-        <div id="footer-start" class="flex items-center justify-center">
-          <svg
-            class="max-[360px]:inline-block max-[360px]:w-25 max-[360px]:pr-1"
-            width="224"
-            height="1"
-            viewBox="0 0 224 1"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M0.5 0.5L223.5 0.5" stroke="#AFAFAF" />
-          </svg>
-          <h2
-            class="font-[YekanBakhReg] font-semibold text-[20px] mx-5 max-[360px]:text-[16px] max-[360px]:mx-3"
-          >
+      <!-- menu items section -->
+      <div id="main-menu-container" class="sidebar-modal">
+        <div id="menu-items-container" class="pb-35">
+          <h1 id="min-nav-container-left-heading" class="head-modal hidden">
             کوئرا لیست
-          </h2>
-          <svg
-            class="max-[360px]:inline-block max-[360px]:w-25 max-[360px]:pl-1"
-            width="224"
-            height="1"
-            viewBox="0 0 224 1"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M0.5 0.5L223.5 0.5" stroke="#AFAFAF" />
-          </svg>
-        </div>
-        <div
-          id="footer-info"
-          class="pt-20 self-start flex flex-row justify-between w-full px-55 max-[360px]:gap-15 max-[360px]:px-3 max-[360px]:flex-col max-[360px]:pt-7"
-        >
-          <div
-            id="footer-info-right"
-            class="flex flex-col gap-5 max-[360px]:grid max-[360px]:gap-7 max-[360px]:grid-cols-2 max-[360px]:grid-rows-2 max-[360px]:order-2"
-          >
-            <div id="fax" class="flex flex-row gap-4">
-              <svg
-                class="max-[360px]:w-4 max-[360px]:h-4"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+          </h1>
+          <a class="close hidden" href="#">&times;</a>
+          <div class="menu-items">
+            <div id="home" class="item1">
+              <div
+                id="toggle-selected"
+                class="w-full h-full flex bg-[#F5FAFF] py-5"
               >
-                <g clip-path="url(#clip0_6_5871)">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
-                    class="max-[360px]:!fill-(--primary-color)"
-                    d="M3.42857 2.57143C3.42857 1.88944 3.69949 1.23539 4.18173 0.753154C4.66396 0.270918 5.31801 0 6 0H18C18.682 0 19.336 0.270918 19.8183 0.753154C20.3005 1.23539 20.5714 1.88944 20.5714 2.57143V6.85714H18.8571V2.57143C18.8571 2.3441 18.7668 2.12608 18.6061 1.96534C18.4453 1.80459 18.2273 1.71429 18 1.71429H6C5.77267 1.71429 5.55465 1.80459 5.39391 1.96534C5.23316 2.12608 5.14286 2.3441 5.14286 2.57143V8.57143H14.5714C14.0139 9.31269 13.713 10.2154 13.7143 11.1429V21.4286C13.7143 22.3937 14.0331 23.2834 14.5714 24H2.57143C1.88944 24 1.23539 23.7291 0.753154 23.2468C0.270918 22.7646 0 22.1106 0 21.4286V12C0 11.0907 0.361223 10.2186 1.00421 9.57563C1.64719 8.93265 2.51926 8.57143 3.42857 8.57143V2.57143ZM5.57143 13.0714C5.57143 12.7873 5.45855 12.5147 5.25761 12.3138C5.05668 12.1129 4.78416 12 4.5 12C4.21584 12 3.94332 12.1129 3.74239 12.3138C3.54145 12.5147 3.42857 12.7873 3.42857 13.0714C3.42857 13.3556 3.54145 13.6281 3.74239 13.829C3.94332 14.03 4.21584 14.1429 4.5 14.1429C4.78416 14.1429 5.05668 14.03 5.25761 13.829C5.45855 13.6281 5.57143 13.3556 5.57143 13.0714ZM5.57143 16.9286C5.57143 16.6444 5.45855 16.3719 5.25761 16.171C5.05668 15.97 4.78416 15.8571 4.5 15.8571C4.21584 15.8571 3.94332 15.97 3.74239 16.171C3.54145 16.3719 3.42857 16.6444 3.42857 16.9286C3.42857 17.2127 3.54145 17.4853 3.74239 17.6862C3.94332 17.8871 4.21584 18 4.5 18C4.78416 18 5.05668 17.8871 5.25761 17.6862C5.45855 17.4853 5.57143 17.2127 5.57143 16.9286ZM8.35714 16.0714C8.07298 16.0714 7.80046 16.1843 7.59953 16.3852C7.3986 16.5862 7.28571 16.8587 7.28571 17.1429C7.28571 17.427 7.3986 17.6995 7.59953 17.9005C7.80046 18.1014 8.07298 18.2143 8.35714 18.2143C8.6413 18.2143 8.91383 18.1014 9.11476 17.9005C9.31569 17.6995 9.42857 17.427 9.42857 17.1429C9.42857 16.8587 9.31569 16.5862 9.11476 16.3852C8.91383 16.1843 8.6413 16.0714 8.35714 16.0714ZM9.42857 13.0714C9.42857 12.7873 9.31569 12.5147 9.11476 12.3138C8.91383 12.1129 8.6413 12 8.35714 12C8.07298 12 7.80046 12.1129 7.59953 12.3138C7.3986 12.5147 7.28571 12.7873 7.28571 13.0714C7.28571 13.3556 7.3986 13.6281 7.59953 13.829C7.80046 14.03 8.07298 14.1429 8.35714 14.1429C8.6413 14.1429 8.91383 14.03 9.11476 13.829C9.31569 13.6281 9.42857 13.3556 9.42857 13.0714ZM18 8.57143C17.318 8.57143 16.664 8.84235 16.1817 9.32458C15.6995 9.80682 15.4286 10.4609 15.4286 11.1429V21.4286C15.4286 22.1106 15.6995 22.7646 16.1817 23.2468C16.664 23.7291 17.318 24 18 24H21.4286C22.1106 24 22.7646 23.7291 23.2468 23.2468C23.7291 22.7646 24 22.1106 24 21.4286V11.1429C24 10.4609 23.7291 9.80682 23.2468 9.32458C22.7646 8.84235 22.1106 8.57143 21.4286 8.57143H18Z"
-                    fill="#242424"
+                    d="M16.7057 5.68373L11.9057 2.3254C10.5974 1.40873 8.58906 1.45873 7.33073 2.43373L3.15573 5.69206C2.3224 6.34206 1.66406 7.6754 1.66406 8.7254V14.4754C1.66406 16.6004 3.38906 18.3337 5.51406 18.3337H14.4974C16.6224 18.3337 18.3474 16.6087 18.3474 14.4837V8.83373C18.3474 7.70873 17.6224 6.3254 16.7057 5.68373ZM10.6307 15.0004C10.6307 15.3421 10.3474 15.6254 10.0057 15.6254C9.66406 15.6254 9.38073 15.3421 9.38073 15.0004V12.5004C9.38073 12.1587 9.66406 11.8754 10.0057 11.8754C10.3474 11.8754 10.6307 12.1587 10.6307 12.5004V15.0004Z"
+                    fill="#007BFF"
                   />
-                </g>
-                <defs>
-                  <clipPath id="clip0_6_5871">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              <p
-                class="inline-block font-[YekanBakhReg] font-normal text-[14px] max-[360px]:text-[10px]"
-              >
-                فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱
-              </p>
+                </svg>
+                <span
+                  class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-(--primary-color)"
+                  >خانه</span
+                >
+              </div>
             </div>
-            <div
-              id="tel"
-              class="flex flex-row gap-4 max-[360px]:row-start-1 max-[360px]:row-end-2 max-[360px]:col-start-2 max-[360px]:col-end-3"
-            >
+            <div id="tasks" class="item2 flex py-5">
               <svg
-                class="max-[360px]:w-4 max-[360px]:h-4"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  class="max-[360px]:!fill-(--primary-color)"
-                  d="M11.05 14.95L9.2 16.8C8.81 17.19 8.19 17.19 7.79 16.81C7.68 16.7 7.57 16.6 7.46 16.49C6.43 15.45 5.5 14.36 4.67 13.22C3.85 12.08 3.19 10.94 2.71 9.81C2.24 8.67 2 7.58 2 6.54C2 5.86 2.12 5.21 2.36 4.61C2.6 4 2.98 3.44 3.51 2.94C4.15 2.31 4.85 2 5.59 2C5.87 2 6.15 2.06 6.4 2.18C6.66 2.3 6.89 2.48 7.07 2.74L9.39 6.01C9.57 6.26 9.7 6.49 9.79 6.71C9.88 6.92 9.93 7.13 9.93 7.32C9.93 7.56 9.86 7.8 9.72 8.03C9.59 8.26 9.4 8.5 9.16 8.74L8.4 9.53C8.29 9.64 8.24 9.77 8.24 9.93C8.24 10.01 8.25 10.08 8.27 10.16C8.3 10.24 8.33 10.3 8.35 10.36C8.53 10.69 8.84 11.12 9.28 11.64C9.73 12.16 10.21 12.69 10.73 13.22C10.83 13.32 10.94 13.42 11.04 13.52C11.44 13.91 11.45 14.55 11.05 14.95Z"
-                  fill="#242424"
+                  d="M10.3066 7.40002H14.6816"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 />
                 <path
-                  class="max-[360px]:!fill-(--primary-color)"
-                  d="M21.9701 18.33C21.9701 18.61 21.9201 18.9 21.8201 19.18C21.7901 19.26 21.7601 19.34 21.7201 19.42C21.5501 19.78 21.3301 20.12 21.0401 20.44C20.5501 20.98 20.0101 21.37 19.4001 21.62C19.3901 21.62 19.3801 21.63 19.3701 21.63C18.7801 21.87 18.1401 22 17.4501 22C16.4301 22 15.3401 21.76 14.1901 21.27C13.0401 20.78 11.8901 20.12 10.7501 19.29C10.3601 19 9.9701 18.71 9.6001 18.4L12.8701 15.13C13.1501 15.34 13.4001 15.5 13.6101 15.61C13.6601 15.63 13.7201 15.66 13.7901 15.69C13.8701 15.72 13.9501 15.73 14.0401 15.73C14.2101 15.73 14.3401 15.67 14.4501 15.56L15.2101 14.81C15.4601 14.56 15.7001 14.37 15.9301 14.25C16.1601 14.11 16.3901 14.04 16.6401 14.04C16.8301 14.04 17.0301 14.08 17.2501 14.17C17.4701 14.26 17.7001 14.39 17.9501 14.56L21.2601 16.91C21.5201 17.09 21.7001 17.3 21.8101 17.55C21.9101 17.8 21.9701 18.05 21.9701 18.33Z"
-                  fill="#242424"
+                  d="M5.31641 7.40002L5.94141 8.02502L7.81641 6.15002"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10.3066 13.2333H14.6816"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M5.31641 13.2333L5.94141 13.8583L7.81641 11.9833"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M7.49935 18.3334H12.4993C16.666 18.3334 18.3327 16.6667 18.3327 12.5V7.50002C18.3327 3.33335 16.666 1.66669 12.4993 1.66669H7.49935C3.33268 1.66669 1.66602 3.33335 1.66602 7.50002V12.5C1.66602 16.6667 3.33268 18.3334 7.49935 18.3334Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 />
               </svg>
 
-              <p
-                class="inline-block font-[YekanBakhReg] font-normal text-[14px] max-[360px]:text-[10px]"
+              <span
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >تسک ها</span
               >
-                تلفن پشتیبانی: ۴۴۴۴۵۵۶۶ - ۰۲۱
-              </p>
             </div>
-            <div
-              id="loc"
-              class="row-start-1 row-end-3 flex gap-4 max-[360px]:text-center max-[360px]:justify-center max-[360px]:items-center max-[360px]:flex-col max-[360px]:row-start-1 max-[360px]:row-end-3"
-            >
+            <div id="calendar" class="item3 flex py-5">
               <svg
-                class="max-[360px]:w-4 max-[360px]:h-4"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  class="max-[360px]:!fill-(--primary-color)"
-                  d="M20.6201 8.45C19.5701 3.83 15.5401 1.75 12.0001 1.75C12.0001 1.75 12.0001 1.75 11.9901 1.75C8.4601 1.75 4.4201 3.82 3.3701 8.44C2.2001 13.6 5.3601 17.97 8.2201 20.72C9.2801 21.74 10.6401 22.25 12.0001 22.25C13.3601 22.25 14.7201 21.74 15.7701 20.72C18.6301 17.97 21.7901 13.61 20.6201 8.45ZM12.0001 13.46C10.2601 13.46 8.8501 12.05 8.8501 10.31C8.8501 8.57 10.2601 7.16 12.0001 7.16C13.7401 7.16 15.1501 8.57 15.1501 10.31C15.1501 12.05 13.7401 13.46 12.0001 13.46Z"
-                  fill="#242424"
+                  d="M6.66602 1.66669V4.16669"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.334 1.66669V4.16669"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2.91602 7.57495H17.0827"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M17.5 7.08335V14.1667C17.5 16.6667 16.25 18.3334 13.3333 18.3334H6.66667C3.75 18.3334 2.5 16.6667 2.5 14.1667V7.08335C2.5 4.58335 3.75 2.91669 6.66667 2.91669H13.3333C16.25 2.91669 17.5 4.58335 17.5 7.08335Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.0781 11.4167H13.0856"
+                  stroke="#525252"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.0781 13.9167H13.0856"
+                  stroke="#525252"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.99607 11.4167H10.0036"
+                  stroke="#525252"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.99607 13.9167H10.0036"
+                  stroke="#525252"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6.91209 11.4167H6.91957"
+                  stroke="#525252"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6.91209 13.9167H6.91957"
+                  stroke="#525252"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 />
               </svg>
-              <p
-                class="font-[YekanBakhReg] font-normal text-[14px] max-[360px]:text-[10px]"
+              <span
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >تقویم</span
               >
-                آدرس دفتر مرکزی: پونک - خیابان اشرفی<br
-                  class="max-[360px]:hidden"
-                />
-                اصفهانی - خیابان صبحدل- بن بست شب بو
-              </p>
             </div>
-          </div>
-          <div
-            id="footer-info-left"
-            class="max-[360px]:flex max-[360px]:flex-col max-[360px]:items-start max-[360px]:order-1"
-          >
-            <p
-              class="font-[YekanBakhReg] font-bold text-[16px] pb-4 text-[#242424] max-[360px]:pb-2 max-[360px]:text-[14px]"
-            >
-              با ما در ارتباط باش
-            </p>
-            <p
-              class="font-[YekanBakhReg] font-normal text-[16px] text-[#242424] max-[360px]:w-[311px] max-[360px]:text-[12px]"
-            >
-              اگه میخوای اولین نفری باشی که از فیچرهای جدید<br
-                class="max-[360px]:hidden"
-              />
-              و تخفیفات با خبر بشی.
-            </p>
-            <div id="input-mail" class="relative mt-9">
-              <label class="hidden" for="e-mail">a</label>
-
-              <input
-                class="w-[335px] h-[48px] !border !border-gray-400 !rounded-[10px] placeholder:!font-[YekanBakhReg] placeholder:font-normal placeholder:text-[14px] placeholder:pr-5 placeholder:text-[#BCBCBC] max-[360px]:w-[300px] max-[360px]:h-[48px]"
-                placeholder="ایمیل"
-                type="text"
-                id="e-mail"
-                name="e-mail"
-              />
-              <input
-                type="submit"
-                value="ارسال"
-                class="absolute left-[4px] !top-[6px] py-2 px-4 rounded-[10px] bg-(--primary-color) text-[#fff] font-[YekanBakhReg] text-[14px] font-black max-[360px]:left-[6px]"
-              />
+            <div id="reports" class="item4 flex py-5">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.49935 18.3334H12.4993C16.666 18.3334 18.3327 16.6667 18.3327 12.5V7.50002C18.3327 3.33335 16.666 1.66669 12.4993 1.66669H7.49935C3.33268 1.66669 1.66602 3.33335 1.66602 7.50002V12.5C1.66602 16.6667 3.33268 18.3334 7.49935 18.3334Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.48255 14.2916L5.94922 11.7583"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.48242 5.70831V14.2916"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.5156 5.70831L14.049 8.24165"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.5156 14.2916V5.70831"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >گزارشات</span
+              >
+            </div>
+            <div id="settings" class="item5 flex py-5">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.5 7.59163V12.4C2.5 14.1666 2.5 14.1666 4.16667 15.2916L8.75 17.9416C9.44167 18.3416 10.5667 18.3416 11.25 17.9416L15.8333 15.2916C17.5 14.1666 17.5 14.1666 17.5 12.4083V7.59163C17.5 5.8333 17.5 5.8333 15.8333 4.7083L11.25 2.0583C10.5667 1.6583 9.44167 1.6583 8.75 2.0583L4.16667 4.7083C2.5 5.8333 2.5 5.8333 2.5 7.59163Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >تنظیمات</span
+              >
+            </div>
+            <div id="support" class="item6 flex py-5">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15 15.7166H14.3667C13.7 15.7166 13.0667 15.975 12.6 16.4416L11.175 17.85C10.525 18.4917 9.46667 18.4917 8.81667 17.85L7.39166 16.4416C6.925 15.975 6.28333 15.7166 5.625 15.7166H5C3.61667 15.7166 2.5 14.6083 2.5 13.2417V4.14996C2.5 2.7833 3.61667 1.67499 5 1.67499H15C16.3833 1.67499 17.5 2.7833 17.5 4.14996V13.2417C17.5 14.6 16.3833 15.7166 15 15.7166Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M5.83203 7.6333C5.83203 6.8583 6.46537 6.22491 7.24037 6.22491C8.01537 6.22491 8.6487 6.8583 8.6487 7.6333C8.6487 9.19997 6.42369 9.36663 5.93203 10.8583C5.83203 11.1666 6.09036 11.475 6.41536 11.475H8.6487"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.3655 11.4666V6.70832C13.3655 6.49165 13.2238 6.29993 13.0155 6.2416C12.8072 6.18327 12.5822 6.2666 12.4655 6.44993C11.8655 7.4166 11.2155 8.51661 10.6488 9.48328C10.5572 9.64161 10.5572 9.84995 10.6488 10.0083C10.7405 10.1666 10.9155 10.2666 11.1072 10.2666H14.1655"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >پشتیبانی</span
+              >
+            </div>
+            <div id="profile" class="item7 flex py-5">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.1341 9.05835C10.0508 9.05002 9.95078 9.05002 9.85911 9.05835C7.87578 8.99169 6.30078 7.36669 6.30078 5.36669C6.30078 3.32502 7.95078 1.66669 10.0008 1.66669C12.0424 1.66669 13.7008 3.32502 13.7008 5.36669C13.6924 7.36669 12.1174 8.99169 10.1341 9.05835Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M5.96758 12.1333C3.95091 13.4833 3.95091 15.6833 5.96758 17.025C8.25924 18.5583 12.0176 18.5583 14.3092 17.025C16.3259 15.675 16.3259 13.475 14.3092 12.1333C12.0259 10.6083 8.26758 10.6083 5.96758 12.1333Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >پروفایل</span
+              >
             </div>
           </div>
         </div>
-        <div
-          id="copy-right"
-          class="pb-4 pt-20 text-center max-[360px]:pt-15 max-[360px]:pb-9"
-        >
-          <p
-            class="font-[YekanBakhReg] font-normal text-[14px] text-[#666666] max-[360px]:text-[12px]"
+        <!-- aside footer (dark mode btn toggle) -->
+        <div id="aside-footer" class="pb-6">
+          <!-- toggle btn -->
+          <div
+            id="dark-btn-toggle"
+            class="flex p-4 mb-7 align-center justify-center gap-x-5 rounded-lg bg-[#F7F7F7]"
           >
-            تمامی حقوق مادی و معنوی این سایت متعلق به کوئرا لیست می‌باشد.
-          </p>
+            <div id="day" class="flex w-full bg-[#FFF]">
+              <svg
+                width="17"
+                height="16"
+                viewBox="0 0 17 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.49935 12.3333C10.8926 12.3333 12.8327 10.3932 12.8327 7.99996C12.8327 5.60673 10.8926 3.66663 8.49935 3.66663C6.10612 3.66663 4.16602 5.60673 4.16602 7.99996C4.16602 10.3932 6.10612 12.3333 8.49935 12.3333Z"
+                  stroke="#525252"
+                  stroke-width="1.16667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.2607 12.7599L13.174 12.6733M13.174 3.32659L13.2607 3.23992L13.174 3.32659ZM3.74065 12.7599L3.82732 12.6733L3.74065 12.7599ZM8.50065 1.38659V1.33325V1.38659ZM8.50065 14.6666V14.6133V14.6666ZM1.88732 7.99992H1.83398H1.88732ZM15.1673 7.99992H15.114H15.1673ZM3.82732 3.32659L3.74065 3.23992L3.82732 3.32659Z"
+                  stroke="#525252"
+                  stroke-width="1.55556"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="pr-4 leading-[1] font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >روشن</span
+              >
+            </div>
+            <div id="night" class="flex w-full">
+              <svg
+                width="17"
+                height="16"
+                viewBox="0 0 17 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.85404 8.27997C2.09404 11.7133 5.00738 14.5066 8.49404 14.66C10.954 14.7666 13.154 13.62 14.474 11.8133C15.0207 11.0733 14.7274 10.58 13.814 10.7466C13.3674 10.8266 12.9074 10.86 12.4274 10.84C9.16738 10.7066 6.50071 7.97997 6.48738 4.75997C6.48071 3.89331 6.66071 3.07331 6.98738 2.32664C7.34738 1.49997 6.91404 1.10664 6.08071 1.45997C3.44071 2.57331 1.63404 5.23331 1.85404 8.27997Z"
+                  stroke="#808080"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="pr-4 leading-[1] font-[YekanBakhReg] font-semibold text-[16px] text-[#808080]"
+                >تاریک</span
+              >
+            </div>
+          </div>
+          <!-- line svg -->
+          <div id="line-svg" class="mb-7">
+            <svg
+              class="mx-auto"
+              width="208"
+              height="1"
+              viewBox="0 0 208 1"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line x1="208" y1="0.5" y2="0.5" stroke="#E9E9E9" />
+            </svg>
+          </div>
+          <!-- logout btn -->
+          <div id="logout-sec" class="flex">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.41602 6.29995C7.67435 3.29995 9.21602 2.07495 12.591 2.07495H12.6993C16.4243 2.07495 17.916 3.56662 17.916 7.29162V12.725C17.916 16.45 16.4243 17.9416 12.6993 17.9416H12.591C9.24102 17.9416 7.69935 16.7333 7.42435 13.7833"
+                stroke="#525252"
+                stroke-width="1.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12.499 10H3.01562"
+                stroke="#525252"
+                stroke-width="1.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M4.87565 7.20837L2.08398 10L4.87565 12.7917"
+                stroke="#525252"
+                stroke-width="1.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span
+              class="pr-4 leading-[1.3] font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+              >خروج</span
+            >
+          </div>
         </div>
       </div>
-    </footer>
+    </aside>
+    <!-- Main Design (tasks) -->
+    <main id="main" class="w-full max-w-3xl inline-block flex flex-column mt-22 mr-25">
+      <div id="main-header">
+        <h2
+          class="mb-1.5 font-[YekanBakhBol] font-extrabold text-[20px] text-[#242424]"
+        >
+          تسک‌های امروز
+        </h2>
+        <p class="pb-6 font-[YekanBakhReg] font-medium text-[14px] text-[#696969]">
+          تسکی برای امروز نداری!
+        </p>
+        <div
+          id="add-tasks-btn"
+          class="p-5 mb-10 rounded-xl border-1 border-dashed border-[#CCCCCC]"
+        >
+          <div id="add-new-sec" class="flex gap-x-3 cursor-pointer">
+            <svg
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 12.5H18"
+                stroke="#007BFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 18.5V6.5"
+                stroke="#007BFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span
+              class="font-[YekanBakhReg] font-extrabold text-[16px] text-(--primary-color)"
+              >افزودن وظیفه جدید</span
+            >
+          </div>
+        </div>
+        <div id="img-holder" class="justify-self-center flex flex-col items-center opacity-50">
+          <img src="./assets/images/Frame 1000005523.png" class="w-[232px] h-[283px]" alt="tasks-holder">
+          <h3 class="pb-1 font-[YekanBakhBol] font-black text-[16px]">چه کارهایی امروز برای انجام داری؟</h3>
+          <p class="font-[YekanBakhReg] font-normal text-[14px]"">میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!</p>
+        </div>
+      </div>
+      <div id="tasks-container"></div>
+      <div id="done-tasks-container"></div>
+    </main>
     <script src="./vendor/FontAwesome5/all.min.js"></script>
   </body>
 </html>
