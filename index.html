@@ -7,10 +7,22 @@
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/responsive.css" />
     <link rel="stylesheet" href="./vendor/FontAwesome5/all.min.css" />
+    <style type="text/tailwindcss">
+      /* Class‑based dark mode */
+      @variant dark (&:where(.dark, .dark *));
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/persian-date@1.2.0/dist/persian-date.min.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
     <title>کوئرا لیست</title>
   </head>
-  <body class="bg-[#FEFEFE] flex">
+  <body
+    class="bg-[#FEFEFE] flex dark:bg-[#060c18] dark:text-white transition-colors duration-300"
+  >
     <!-- NavBar Design (just for mobile) -->
     <nav id="nav" class="hidden">
       <!--NavBar Container-->
@@ -41,8 +53,7 @@
             <span
               id="date"
               class="font-[YekanBakhReg] font-semibold text-[14px] text-[#5C5C5C]"
-              >سه‌شنبه، ۵ بهمن ۱۴۰۲</span
-            >
+            ></span>
           </div>
         </div>
       </div>
@@ -369,7 +380,11 @@
             id="dark-btn-toggle"
             class="flex p-4 mb-7 align-center justify-center gap-x-5 rounded-lg bg-[#F7F7F7]"
           >
-            <div id="day" class="flex w-full bg-[#FFF]">
+            <div
+              id="day"
+              class="flex w-full bg-[#FFF] cursor-pointer select-none"
+              role="button"
+            >
               <svg
                 width="17"
                 height="16"
@@ -397,7 +412,12 @@
                 >روشن</span
               >
             </div>
-            <div id="night" class="flex w-full">
+            <!-- بهش نقش دکمه دادیم که بتونیم با استفاده از ایونت کلیک به حالت دارک تغییر مود بدیم -->
+            <div
+              id="night"
+              class="flex w-full cursor-pointer select-none"
+              role="button"
+            >
               <svg
                 width="17"
                 height="16"
@@ -475,7 +495,6 @@
       id="main"
       class="w-full max-w-3xl inline-block flex flex-column mt-22 mr-25"
     >
-      <!-- the section of adding tasks -->
       <div id="main-header">
         <h2
           class="mb-1.5 font-[YekanBakhBol] font-extrabold text-[20px] text-[#242424]"
@@ -537,12 +556,10 @@
           </p>
         </div>
       </div>
-      <!-- the section of task that user add them -->
       <div id="tasks-container"></div>
-      <!-- the section of tasks that user done -->
       <div id="done-tasks-container"></div>
     </main>
     <script src="./vendor/FontAwesome5/all.min.js"></script>
-    <script src="./scripts/main.js"></script>
+    <script src="./src/app.js"></script>
   </body>
 </html>
