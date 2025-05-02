@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/responsive.css" />
     <link rel="stylesheet" href="./vendor/FontAwesome5/all.min.css" />
+    <script src="./src/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>کوئرا لیست</title>
   </head>
-  <body class="bg-[#FEFEFE] flex">
+  <body class="bg-[#FEFEFE] flex dark:bg-[#060c18] dark:text-white transition-colors duration-300">
     <!-- NavBar Design (just for mobile) -->
     <nav id="nav" class="hidden">
       <!--NavBar Container-->
@@ -396,7 +397,8 @@
                 >روشن</span
               >
             </div>
-            <div id="night" class="flex w-full">
+            <!-- بهش نقش دکمه دادیم که بتونیم با استفاده از ایونت کلیک به حالت دارک تغییر مود بدیم -->
+            <div id="night" class="flex w-full cursor-pointer select-none" role="button">
               <svg
                 width="17"
                 height="16"
