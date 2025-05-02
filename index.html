@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/font.css" />
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
+    <link rel="stylesheet" href="./vendor/FontAwesome5/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>کوئرا لیست</title>
+  </head>
+  <body class="bg-[#FEFEFE] flex">
+    <!-- NavBar Design (just for mobile) -->
+    <nav id="nav" class="hidden">
+      <!--NavBar Container-->
+      <div id="min-nav-container">
+        <div id="min-nav-container-right">
+          <a id="mobile-menu" href="#main-menu-container"
+            ><img src="./assets/icons/Frame 12160.png" alt="three-line-icon"
+          /></a>
+        </div>
+        <div id="min-nav-container-left">
+          <h1 id="min-nav-container-left-heading">کوئرا لیست</h1>
+        </div>
+      </div>
+    </nav>
+    <!-- Aside Design (panel) -->
+    <aside
+      id="aside"
+      class="inline-block m-7 pl-15 pr-7 pt-15 bg-[#FFF] [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)]"
+    >
+      <!-- personal info section -->
+      <div id="personal-info" class="pb-20">
+        <div id="avatar-cont" class="flex items-center gap-4">
+          <img src="./assets/avatar/Ellipse 135 (2).png" alt="" />
+          <div id="avatar-desc" class="flex flex-col pb-2">
+            <span class="pb-1 font-[YekanBakhBol] font-extrabold text-[18px]"
+              >سلام، رویا
+            </span>
+            <span
+              class="font-[YekanBakhReg] font-semibold text-[14px] text-[#5C5C5C]"
+              >سه‌شنبه، ۵ بهمن ۱۴۰۲</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- menu items section -->
+      <div id="main-menu-container" class="sidebar-modal">
+        <div id="menu-items-container" class="pb-35">
+          <h1 id="min-nav-container-left-heading" class="head-modal hidden">
+            کوئرا لیست
+          </h1>
+          <a class="close hidden" href="#">&times;</a>
+          <div class="menu-items">
+            <div id="home" class="item1">
+              <div
+                id="toggle-selected"
+                class="w-full h-full flex bg-[#F5FAFF] py-5"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.7057 5.68373L11.9057 2.3254C10.5974 1.40873 8.58906 1.45873 7.33073 2.43373L3.15573 5.69206C2.3224 6.34206 1.66406 7.6754 1.66406 8.7254V14.4754C1.66406 16.6004 3.38906 18.3337 5.51406 18.3337H14.4974C16.6224 18.3337 18.3474 16.6087 18.3474 14.4837V8.83373C18.3474 7.70873 17.6224 6.3254 16.7057 5.68373ZM10.6307 15.0004C10.6307 15.3421 10.3474 15.6254 10.0057 15.6254C9.66406 15.6254 9.38073 15.3421 9.38073 15.0004V12.5004C9.38073 12.1587 9.66406 11.8754 10.0057 11.8754C10.3474 11.8754 10.6307 12.1587 10.6307 12.5004V15.0004Z"
+                    fill="#007BFF"
+                  />
+                </svg>
+                <span
+                  class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-(--primary-color)"
+                  >خانه</span
+                >
+              </div>
+            </div>
+            <div id="tasks" class="item2 flex py-5">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.3066 7.40002H14.6816"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M5.31641 7.40002L5.94141 8.02502L7.81641 6.15002"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10.3066 13.2333H14.6816"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M5.31641 13.2333L5.94141 13.8583L7.81641 11.9833"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M7.49935 18.3334H12.4993C16.666 18.3334 18.3327 16.6667 18.3327 12.5V7.50002C18.3327 3.33335 16.666 1.66669 12.4993 1.66669H7.49935C3.33268 1.66669 1.66602 3.33335 1.66602 7.50002V12.5C1.66602 16.6667 3.33268 18.3334 7.49935 18.3334Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <span
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >تسک ها</span
+              >
+            </div>
+            <div id="calendar" class="item3 flex py-5">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.66602 1.66669V4.16669"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.334 1.66669V4.16669"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2.91602 7.57495H17.0827"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M17.5 7.08335V14.1667C17.5 16.6667 16.25 18.3334 13.3333 18.3334H6.66667C3.75 18.3334 2.5 16.6667 2.5 14.1667V7.08335C2.5 4.58335 3.75 2.91669 6.66667 2.91669H13.3333C16.25 2.91669 17.5 4.58335 17.5 7.08335Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.0781 11.4167H13.0856"
+                  stroke="#525252"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.0781 13.9167H13.0856"
+                  stroke="#525252"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.99607 11.4167H10.0036"
+                  stroke="#525252"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.99607 13.9167H10.0036"
+                  stroke="#525252"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6.91209 11.4167H6.91957"
+                  stroke="#525252"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6.91209 13.9167H6.91957"
+                  stroke="#525252"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >تقویم</span
+              >
+            </div>
+            <div id="reports" class="item4 flex py-5">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.49935 18.3334H12.4993C16.666 18.3334 18.3327 16.6667 18.3327 12.5V7.50002C18.3327 3.33335 16.666 1.66669 12.4993 1.66669H7.49935C3.33268 1.66669 1.66602 3.33335 1.66602 7.50002V12.5C1.66602 16.6667 3.33268 18.3334 7.49935 18.3334Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.48255 14.2916L5.94922 11.7583"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.48242 5.70831V14.2916"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.5156 5.70831L14.049 8.24165"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.5156 14.2916V5.70831"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >گزارشات</span
+              >
+            </div>
+            <div id="settings" class="item5 flex py-5">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.5 7.59163V12.4C2.5 14.1666 2.5 14.1666 4.16667 15.2916L8.75 17.9416C9.44167 18.3416 10.5667 18.3416 11.25 17.9416L15.8333 15.2916C17.5 14.1666 17.5 14.1666 17.5 12.4083V7.59163C17.5 5.8333 17.5 5.8333 15.8333 4.7083L11.25 2.0583C10.5667 1.6583 9.44167 1.6583 8.75 2.0583L4.16667 4.7083C2.5 5.8333 2.5 5.8333 2.5 7.59163Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >تنظیمات</span
+              >
+            </div>
+            <div id="support" class="item6 flex py-5">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15 15.7166H14.3667C13.7 15.7166 13.0667 15.975 12.6 16.4416L11.175 17.85C10.525 18.4917 9.46667 18.4917 8.81667 17.85L7.39166 16.4416C6.925 15.975 6.28333 15.7166 5.625 15.7166H5C3.61667 15.7166 2.5 14.6083 2.5 13.2417V4.14996C2.5 2.7833 3.61667 1.67499 5 1.67499H15C16.3833 1.67499 17.5 2.7833 17.5 4.14996V13.2417C17.5 14.6 16.3833 15.7166 15 15.7166Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M5.83203 7.6333C5.83203 6.8583 6.46537 6.22491 7.24037 6.22491C8.01537 6.22491 8.6487 6.8583 8.6487 7.6333C8.6487 9.19997 6.42369 9.36663 5.93203 10.8583C5.83203 11.1666 6.09036 11.475 6.41536 11.475H8.6487"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.3655 11.4666V6.70832C13.3655 6.49165 13.2238 6.29993 13.0155 6.2416C12.8072 6.18327 12.5822 6.2666 12.4655 6.44993C11.8655 7.4166 11.2155 8.51661 10.6488 9.48328C10.5572 9.64161 10.5572 9.84995 10.6488 10.0083C10.7405 10.1666 10.9155 10.2666 11.1072 10.2666H14.1655"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >پشتیبانی</span
+              >
+            </div>
+            <div id="profile" class="item7 flex py-5">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.1341 9.05835C10.0508 9.05002 9.95078 9.05002 9.85911 9.05835C7.87578 8.99169 6.30078 7.36669 6.30078 5.36669C6.30078 3.32502 7.95078 1.66669 10.0008 1.66669C12.0424 1.66669 13.7008 3.32502 13.7008 5.36669C13.6924 7.36669 12.1174 8.99169 10.1341 9.05835Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M5.96758 12.1333C3.95091 13.4833 3.95091 15.6833 5.96758 17.025C8.25924 18.5583 12.0176 18.5583 14.3092 17.025C16.3259 15.675 16.3259 13.475 14.3092 12.1333C12.0259 10.6083 8.26758 10.6083 5.96758 12.1333Z"
+                  stroke="#525252"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >پروفایل</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- aside footer (dark mode btn toggle) -->
+        <div id="aside-footer" class="pb-6">
+          <!-- toggle btn -->
+          <div
+            id="dark-btn-toggle"
+            class="flex p-4 mb-7 align-center justify-center gap-x-5 rounded-lg bg-[#F7F7F7]"
+          >
+            <div id="day" class="flex w-full bg-[#FFF]">
+              <svg
+                width="17"
+                height="16"
+                viewBox="0 0 17 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.49935 12.3333C10.8926 12.3333 12.8327 10.3932 12.8327 7.99996C12.8327 5.60673 10.8926 3.66663 8.49935 3.66663C6.10612 3.66663 4.16602 5.60673 4.16602 7.99996C4.16602 10.3932 6.10612 12.3333 8.49935 12.3333Z"
+                  stroke="#525252"
+                  stroke-width="1.16667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.2607 12.7599L13.174 12.6733M13.174 3.32659L13.2607 3.23992L13.174 3.32659ZM3.74065 12.7599L3.82732 12.6733L3.74065 12.7599ZM8.50065 1.38659V1.33325V1.38659ZM8.50065 14.6666V14.6133V14.6666ZM1.88732 7.99992H1.83398H1.88732ZM15.1673 7.99992H15.114H15.1673ZM3.82732 3.32659L3.74065 3.23992L3.82732 3.32659Z"
+                  stroke="#525252"
+                  stroke-width="1.55556"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="pr-4 leading-[1] font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                >روشن</span
+              >
+            </div>
+            <div id="night" class="flex w-full">
+              <svg
+                width="17"
+                height="16"
+                viewBox="0 0 17 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.85404 8.27997C2.09404 11.7133 5.00738 14.5066 8.49404 14.66C10.954 14.7666 13.154 13.62 14.474 11.8133C15.0207 11.0733 14.7274 10.58 13.814 10.7466C13.3674 10.8266 12.9074 10.86 12.4274 10.84C9.16738 10.7066 6.50071 7.97997 6.48738 4.75997C6.48071 3.89331 6.66071 3.07331 6.98738 2.32664C7.34738 1.49997 6.91404 1.10664 6.08071 1.45997C3.44071 2.57331 1.63404 5.23331 1.85404 8.27997Z"
+                  stroke="#808080"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="pr-4 leading-[1] font-[YekanBakhReg] font-semibold text-[16px] text-[#808080]"
+                >تاریک</span
+              >
+            </div>
+          </div>
+          <!-- line svg -->
+          <div id="line-svg" class="mb-7">
+            <svg
+              class="mx-auto"
+              width="208"
+              height="1"
+              viewBox="0 0 208 1"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line x1="208" y1="0.5" y2="0.5" stroke="#E9E9E9" />
+            </svg>
+          </div>
+          <!-- logout btn -->
+          <div id="logout-sec" class="flex">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.41602 6.29995C7.67435 3.29995 9.21602 2.07495 12.591 2.07495H12.6993C16.4243 2.07495 17.916 3.56662 17.916 7.29162V12.725C17.916 16.45 16.4243 17.9416 12.6993 17.9416H12.591C9.24102 17.9416 7.69935 16.7333 7.42435 13.7833"
+                stroke="#525252"
+                stroke-width="1.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12.499 10H3.01562"
+                stroke="#525252"
+                stroke-width="1.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M4.87565 7.20837L2.08398 10L4.87565 12.7917"
+                stroke="#525252"
+                stroke-width="1.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span
+              class="pr-4 leading-[1.3] font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+              >خروج</span
+            >
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!-- Main Design (tasks) -->
+    <main id="main" class="w-full max-w-3xl inline-block flex flex-column mt-22 mr-25">
+      <div id="main-header">
+        <h2
+          class="mb-1.5 font-[YekanBakhBol] font-extrabold text-[20px] text-[#242424]"
+        >
+          تسک‌های امروز
+        </h2>
+        <p class="pb-6 font-[YekanBakhReg] font-medium text-[14px] text-[#696969]">
+          تسکی برای امروز نداری!
+        </p>
+        <div
+          id="add-tasks-btn"
+          class="p-5 mb-10 rounded-xl border-1 border-dashed border-[#CCCCCC]"
+        >
+          <div id="add-new-sec" class="flex gap-x-3 cursor-pointer">
+            <svg
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 12.5H18"
+                stroke="#007BFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 18.5V6.5"
+                stroke="#007BFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span
+              class="font-[YekanBakhReg] font-extrabold text-[16px] text-(--primary-color)"
+              >افزودن وظیفه جدید</span
+            >
+          </div>
+        </div>
+        <div id="img-holder" class="justify-self-center flex flex-col items-center opacity-50">
+          <img src="./assets/images/Frame 1000005523.png" class="w-[232px] h-[283px]" alt="tasks-holder">
+          <h3 class="pb-1 font-[YekanBakhBol] font-black text-[16px]">چه کارهایی امروز برای انجام داری؟</h3>
+          <p class="font-[YekanBakhReg] font-normal text-[14px]"">میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!</p>
+        </div>
+      </div>
+      <div id="tasks-container"></div>
+      <div id="done-tasks-container"></div>
+    </main>
+    <script src="./vendor/FontAwesome5/all.min.js"></script>
+  </body>
+</html>
