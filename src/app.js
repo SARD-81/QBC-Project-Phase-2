@@ -46,3 +46,12 @@ lightBtn.addEventListener("click", () => {
   setTheme("light");
 }); // set the them by click
 /* finish handle dark mode of website */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tagButton = document.getElementById("tag-button");
+  const tagOptions = document.getElementById("tag-options");
+
+  tagButton.addEventListener("click", () => {
+    tagOptions.classList.toggle("hidden");
+  });
+});

@@ -21,7 +21,7 @@
     <title>کوئرا لیست</title>
   </head>
   <body
-    class="bg-[#FEFEFE] flex dark:bg-[#060c18] dark:text-white transition-colors duration-300"
+    class="bg-[#FEFEFE] flex dark:bg-[#060c18] transition-colors duration-300"
   >
     <!-- NavBar Design (just for mobile) -->
     <nav id="nav" class="hidden">
@@ -40,14 +40,15 @@
     <!-- Aside Design (panel) -->
     <aside
       id="aside"
-      class="inline-block m-7 pl-15 pr-7 pt-15 bg-[#FFF] [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)]"
+      class="inline-block m-7 pl-15 pr-7 pt-15 bg-[#FFF] [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)] dark:bg-[#091120] transition-colors duration-300"
     >
       <!-- personal info section -->
       <div id="personal-info" class="pb-20">
         <div id="avatar-cont" class="flex items-center gap-4">
           <img src="./assets/avatar/Ellipse 135 (2).png" alt="" />
           <div id="avatar-desc" class="flex flex-col pb-2">
-            <span class="pb-1 font-[YekanBakhBol] font-extrabold text-[18px]"
+            <span
+              class="pb-1 font-[YekanBakhBol] font-extrabold text-[18px] dark:text-white"
               >سلام، رویا
             </span>
             <span
@@ -68,7 +69,7 @@
             <div id="home" class="item1">
               <div
                 id="toggle-selected"
-                class="w-full h-full flex bg-[#F5FAFF] py-5"
+                class="w-full h-full flex bg-[#F5FAFF] py-5 pr-10 rounded-md dark:bg-[#041933] transition-colors duration-300"
               >
                 <svg
                   width="20"
@@ -83,12 +84,12 @@
                   />
                 </svg>
                 <span
-                  class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-(--primary-color)"
+                  class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-(--primary-color) dark:text-white transition-colors duration-300"
                   >خانه</span
                 >
               </div>
             </div>
-            <div id="tasks" class="item2 flex py-5">
+            <div id="tasks" class="item2 flex py-5 px-10">
               <svg
                 width="20"
                 height="20"
@@ -134,11 +135,11 @@
               </svg>
 
               <span
-                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252] dark:text-white transition-colors duration-300"
                 >تسک ها</span
               >
             </div>
-            <div id="calendar" class="item3 flex py-5">
+            <div id="calendar" class="item3 flex py-5 px-10">
               <svg
                 width="20"
                 height="20"
@@ -222,11 +223,11 @@
                 />
               </svg>
               <span
-                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252] dark:text-white transition-colors duration-300"
                 >تقویم</span
               >
             </div>
-            <div id="reports" class="item4 flex py-5">
+            <div id="reports" class="item4 flex py-5 px-10">
               <svg
                 width="20"
                 height="20"
@@ -275,11 +276,11 @@
                 />
               </svg>
               <span
-                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252] dark:text-white transition-colors duration-300"
                 >گزارشات</span
               >
             </div>
-            <div id="settings" class="item5 flex py-5">
+            <div id="settings" class="item5 flex py-5 px-10">
               <svg
                 width="20"
                 height="20"
@@ -303,11 +304,11 @@
                 />
               </svg>
               <span
-                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252] dark:text-white transition-colors duration-300"
                 >تنظیمات</span
               >
             </div>
-            <div id="support" class="item6 flex py-5">
+            <div id="support" class="item6 flex py-5 px-10">
               <svg
                 width="20"
                 height="20"
@@ -339,11 +340,11 @@
                 />
               </svg>
               <span
-                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252] dark:text-white transition-colors duration-300"
                 >پشتیبانی</span
               >
             </div>
-            <div id="profile" class="item7 flex py-5">
+            <div id="profile" class="item7 flex py-5 px-10">
               <svg
                 width="20"
                 height="20"
@@ -367,7 +368,7 @@
                 />
               </svg>
               <span
-                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                class="pr-4 font-[YekanBakhReg] font-semibold text-[16px] text-[#525252] dark:text-white transition-colors duration-300"
                 >پروفایل</span
               >
             </div>
@@ -378,11 +379,11 @@
           <!-- toggle btn -->
           <div
             id="dark-btn-toggle"
-            class="flex p-4 mb-7 align-center justify-center gap-x-5 rounded-lg bg-[#F7F7F7]"
+            class="flex p-4 mb-7 align-center justify-center gap-x-5 rounded-lg bg-[#F7F7F7] dark:bg-[#002247] transition-colors duration-300"
           >
             <div
               id="day"
-              class="flex w-full bg-[#FFF] cursor-pointer select-none"
+              class="flex w-full cursor-pointer select-none"
               role="button"
             >
               <svg
@@ -408,7 +409,7 @@
                 />
               </svg>
               <span
-                class="pr-4 leading-[1] font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+                class="pr-4 leading-[1] font-[YekanBakhReg] font-semibold text-[16px] text-[#525252] dark:text-white transition-colors duration-300"
                 >روشن</span
               >
             </div>
@@ -433,7 +434,7 @@
                 />
               </svg>
               <span
-                class="pr-4 leading-[1] font-[YekanBakhReg] font-semibold text-[16px] text-[#808080]"
+                class="pr-4 leading-[1] font-[YekanBakhReg] font-semibold text-[16px] text-[#808080] dark:text-white transition-colors duration-300"
                 >تاریک</span
               >
             </div>
@@ -483,7 +484,7 @@
               />
             </svg>
             <span
-              class="pr-4 leading-[1.3] font-[YekanBakhReg] font-semibold text-[16px] text-[#525252]"
+              class="pr-4 leading-[1.3] font-[YekanBakhReg] font-semibold text-[16px] text-[#525252] dark:text-white"
               >خروج</span
             >
           </div>
@@ -497,7 +498,7 @@
     >
       <div id="main-header">
         <h2
-          class="mb-1.5 font-[YekanBakhBol] font-extrabold text-[20px] text-[#242424]"
+          class="mb-1.5 font-[YekanBakhBol] font-extrabold text-[20px] text-[#242424] dark:text-white"
         >
           تسک‌های امروز
         </h2>
@@ -538,7 +539,117 @@
               >افزودن وظیفه جدید</span
             >
           </div>
+
         </div>
+<div>
+
+     
+
+    </div>
+  
+
+  </div>
+  
+</div>
+
+<!-- FORM WRAPPER -->
+<div id="form-container" class="relative p-6  dark:border border-gray-700 rounded-xl inset-shadow-sm w-full h-100">
+  <!-- CLOSE BUTTON -->
+  <button
+    onclick="document.getElementById('form-container').style.display='none'"
+    class="absolute top-2 left-2 text-gray-500 hover:text-gray-700"
+    aria-label="Close form">
+   
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+         viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <!-- FORM-->
+ <!-- بخش نوشتن تسک جدید -->
+ <form action="" class="w-full">
+  <input type="text" name="task-subject" id="task-subject" placeholder="عنوان تسک" class="border-none w-full m-4 placeholder:font-bold  focus:outline-none placeholder-gray-500 dark:text-white">
+  <textarea name="task-describtion" id="task-describtion" placeholder="توضیحات" class="border-none resize-none m-4 appearance-none  placeholder-gray-400 focus:outline-none  mt-1 dark:text-white"></textarea>
+
+  <div class="flex justify-between items-center mt-4 px-4 mb-15">
+
+<!-- تگ‌ها -->   
+<div class="relative mt-5">
+  <button id="tag-button" type="button"
+    class="flex items-center gap-2 px-3 py-1 shadow-md text-gray-600/50 rounded-md hover:bg-gray-100 text-md dark:border border-gray-700 dark:text-white dark:hover:bg-sky-700 ">
+    تگ‌ها
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.418 3.51661V13.0499C17.418 13.6166 17.0263 14.325 16.543 14.625L10.9763 18.1083C10.4346 18.4416 9.58464 18.4083 9.0763 18.025L3.3263 13.7083C2.91797 13.4 2.58464 12.7333 2.58464 12.225V3.51661C2.58464 2.05828 4.18464 1.17498 5.4263 1.94165L9.11797 4.24995C9.60963 4.55828 10.4096 4.55828 10.9013 4.24995L14.593 1.94165C15.818 1.17498 17.418 2.06661 17.418 3.51661Z" fill="#AFAEB2" stroke="#AFAEB2" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+  </button>
+
+  <!-- گزینه‌های تگ -->
+  <div id="tag-options"
+    class="absolute right-0 mt-4 w-35 rounded-md shadow-lg hidden z-10 text-right flex justify-between">
+    <button type="button" class="text-xs px-2 py-1 rounded-sm bg-green-100 text-green-700 dark:bg-green-600 dark:text-white">پایین</button>
+    <button type="button" class="text-xs px-2 py-1 rounded-sm bg-yellow-100 text-yellow-700 dark:bg-yellow-500 dark:text-white">متوسط</button>
+    <button type="button" class="text-xs px-2 py-1 rounded-sm bg-red-100 text-red-700 dark:bg-red-500 dark:text-white">بالا</button>
+  </div>
+</div>
+  </div>
+
+  <!-- دکمه -->
+  <div class="flex justify-end border-t border-gray-200 mt-5"> 
+     <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors mt-5">
+    اضافه کردن تسک
+  </button>
+  </div>
+  </div>
+ </form>
+</div>
+<br>
+        <div id="done-tasks-container"></div>
+<!-- تسک هایی که اضافه شدن -->
+        <div id="tasks-container" class="space-y-4 mx-auto">
+         
+          <section
+            class="relative flex items-start p-4 pr-5  rounded-xl shadow-sm bg-white dark:bg-gray-800 dark:border border-gray-600"
+          >
+            <!--  خط رنگی عمودی برای اولویت بندی هر تسک -->
+            <div
+              class="absolute top-0 right-0 h-full w-1.5 rounded-r bg-red-500 items-center" id="task-importance-color"
+            ></div>
+  
+            <!-- چک‌باکس -->
+            <input type="checkbox" class="mt-2 ml-3 " />
+  
+            <!-- محتوای داخل هر تسک -->
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-1">
+                <h3 class="font-bold text-gray-800 dark:text-white" id="task-title">
+                  جلسه با مدیران پروژه
+                </h3>
+                <!-- اولویت تسک -->
+                <span
+                  class="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full" id="task-importance"
+                  >بالا</span
+                >
+              </div>
+              <p class="text-sm text-gray-500 dark:text-gray-300">
+                جلسه با محسن یگانه و مریم جلالی
+              </p>
+            </div>
+  
+            <!-- آیکون سه‌نقطه -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-gray-500 dark:text-gray-300 cursor-pointer ml-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <circle cx="10" cy="4" r="1.5" />
+              <circle cx="10" cy="10" r="1.5" />
+              <circle cx="10" cy="16" r="1.5" />
+            </svg>
+          </section>
+  
         <div
           id="img-holder"
           class="justify-self-center flex flex-col items-center opacity-50"
@@ -548,16 +659,19 @@
             class="w-[232px] h-[283px]"
             alt="tasks-holder"
           />
-          <h3 class="pb-1 font-[YekanBakhBol] font-black text-[16px]">
+          <h3
+            class="pb-1 font-[YekanBakhBol] font-black text-[16px] dark:text-white"
+          >
             چه کارهایی امروز برای انجام داری؟
           </h3>
-          <p class="font-[YekanBakhReg] font-normal text-[14px]">
+          <p
+            class="font-[YekanBakhReg] font-normal text-[14px] dark:text-white"
+          >
             میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
           </p>
         </div>
       </div>
-      <div id="tasks-container"></div>
-      <div id="done-tasks-container"></div>
+      <div id="tasks-container" class="mx-auto">
     </main>
     <script src="./vendor/FontAwesome5/all.min.js"></script>
     <script src="./src/app.js"></script>
