@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./styles/font.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/responsive.css" />
+    <link rel="stylesheet" href="./styles/priority-line.css" />
     <link rel="stylesheet" href="./vendor/FontAwesome5/all.min.css" />
     <style type="text/tailwindcss">
       /* Class‑based dark mode */
@@ -496,6 +497,7 @@
       id="main"
       class="w-full max-w-3xl inline-block flex flex-column mt-22 mr-25"
     >
+      <!-- the header of the main tag -->
       <div id="main-header">
         <h2
           class="mb-1.5 font-[YekanBakhBol] font-extrabold text-[20px] text-[#242424] dark:text-white"
@@ -539,139 +541,287 @@
               >افزودن وظیفه جدید</span
             >
           </div>
-
-        </div>
-<div>
-
-     
-
-    </div>
-  
-
-  </div>
-  
-</div>
-
-<!-- FORM WRAPPER -->
-<div id="form-container" class="relative p-6  dark:border border-gray-700 rounded-xl inset-shadow-sm w-full h-100">
-  <!-- CLOSE BUTTON -->
-  <button
-    onclick="document.getElementById('form-container').style.display='none'"
-    class="absolute top-2 left-2 text-gray-500 hover:text-gray-700"
-    aria-label="Close form">
-   
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-         viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M6 18L18 6M6 6l12 12" />
-    </svg>
-  </button>
-
-  <!-- FORM-->
- <!-- بخش نوشتن تسک جدید -->
- <form action="" class="w-full">
-  <input type="text" name="task-subject" id="task-subject" placeholder="عنوان تسک" class="border-none w-full m-4 placeholder:font-bold  focus:outline-none placeholder-gray-500 dark:text-white">
-  <textarea name="task-describtion" id="task-describtion" placeholder="توضیحات" class="border-none resize-none m-4 appearance-none  placeholder-gray-400 focus:outline-none  mt-1 dark:text-white"></textarea>
-
-  <div class="flex justify-between items-center mt-4 px-4 mb-15">
-
-<!-- تگ‌ها -->   
-<div class="relative mt-5">
-  <button id="tag-button" type="button"
-    class="flex items-center gap-2 px-3 py-1 shadow-md text-gray-600/50 rounded-md hover:bg-gray-100 text-md dark:border border-gray-700 dark:text-white dark:hover:bg-sky-700 ">
-    تگ‌ها
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.418 3.51661V13.0499C17.418 13.6166 17.0263 14.325 16.543 14.625L10.9763 18.1083C10.4346 18.4416 9.58464 18.4083 9.0763 18.025L3.3263 13.7083C2.91797 13.4 2.58464 12.7333 2.58464 12.225V3.51661C2.58464 2.05828 4.18464 1.17498 5.4263 1.94165L9.11797 4.24995C9.60963 4.55828 10.4096 4.55828 10.9013 4.24995L14.593 1.94165C15.818 1.17498 17.418 2.06661 17.418 3.51661Z" fill="#AFAEB2" stroke="#AFAEB2" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-  </button>
-
-  <!-- گزینه‌های تگ -->
-  <div id="tag-options"
-    class="absolute right-0 mt-4 w-35 rounded-md shadow-lg hidden z-10 text-right flex justify-between">
-    <button type="button" class="text-xs px-2 py-1 rounded-sm bg-green-100 text-green-700 dark:bg-green-600 dark:text-white">پایین</button>
-    <button type="button" class="text-xs px-2 py-1 rounded-sm bg-yellow-100 text-yellow-700 dark:bg-yellow-500 dark:text-white">متوسط</button>
-    <button type="button" class="text-xs px-2 py-1 rounded-sm bg-red-100 text-red-700 dark:bg-red-500 dark:text-white">بالا</button>
-  </div>
-</div>
-  </div>
-
-  <!-- دکمه -->
-  <div class="flex justify-end border-t border-gray-200 mt-5"> 
-     <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors mt-5">
-    اضافه کردن تسک
-  </button>
-  </div>
-  </div>
- </form>
-</div>
-<br>
-        <div id="done-tasks-container"></div>
-<!-- تسک هایی که اضافه شدن -->
-        <div id="tasks-container" class="space-y-4 mx-auto">
-         
-          <section
-            class="relative flex items-start p-4 pr-5  rounded-xl shadow-sm bg-white dark:bg-gray-800 dark:border border-gray-600"
-          >
-            <!--  خط رنگی عمودی برای اولویت بندی هر تسک -->
-            <div
-              class="absolute top-0 right-0 h-full w-1.5 rounded-r bg-red-500 items-center" id="task-importance-color"
-            ></div>
-  
-            <!-- چک‌باکس -->
-            <input type="checkbox" class="mt-2 ml-3 " />
-  
-            <!-- محتوای داخل هر تسک -->
-            <div class="flex-1">
-              <div class="flex items-center justify-between mb-1">
-                <h3 class="font-bold text-gray-800 dark:text-white" id="task-title">
-                  جلسه با مدیران پروژه
-                </h3>
-                <!-- اولویت تسک -->
-                <span
-                  class="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full" id="task-importance"
-                  >بالا</span
-                >
-              </div>
-              <p class="text-sm text-gray-500 dark:text-gray-300">
-                جلسه با محسن یگانه و مریم جلالی
-              </p>
-            </div>
-  
-            <!-- آیکون سه‌نقطه -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-5 h-5 text-gray-500 dark:text-gray-300 cursor-pointer ml-2"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <circle cx="10" cy="4" r="1.5" />
-              <circle cx="10" cy="10" r="1.5" />
-              <circle cx="10" cy="16" r="1.5" />
-            </svg>
-          </section>
-  
-        <div
-          id="img-holder"
-          class="justify-self-center flex flex-col items-center opacity-50"
-        >
-          <img
-            src="./assets/images/Frame 1000005523.png"
-            class="w-[232px] h-[283px]"
-            alt="tasks-holder"
-          />
-          <h3
-            class="pb-1 font-[YekanBakhBol] font-black text-[16px] dark:text-white"
-          >
-            چه کارهایی امروز برای انجام داری؟
-          </h3>
-          <p
-            class="font-[YekanBakhReg] font-normal text-[14px] dark:text-white"
-          >
-            میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
-          </p>
         </div>
       </div>
-      <div id="tasks-container" class="mx-auto">
+      <!-- img holder when there is no task -->
+      <div
+        id="img-holder"
+        class="justify-self-center flex flex-col items-center opacity-50"
+      >
+        <img
+          src="./assets/images/Frame 1000005523.png"
+          class="w-[232px] h-[283px]"
+          alt="tasks-holder"
+        />
+        <h3
+          class="pb-1 font-[YekanBakhBol] font-black text-[16px] dark:text-white"
+        >
+          چه کارهایی امروز برای انجام داری؟
+        </h3>
+        <p class="font-[YekanBakhReg] font-normal text-[14px] dark:text-white">
+          میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
+        </p>
+      </div>
+      <!-- FORM WRAPPER to add new task -->
+      <div
+        id="add-task-form"
+        class="hidden relative dark:border border-1 border-gray-300 rounded-xl [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)]"
+      >
+        <!-- CLOSE BUTTON -->
+        <div id="close-form">
+          <i
+            class="fa fa-close text-2xl text-gray-500 cursor-pointer absolute left-4 top-4 hover:text-red-700"
+          ></i>
+        </div>
+
+        <!-- FORM-->
+        <!-- بخش نوشتن تسک جدید -->
+        <form id="add-task-form" action="" class="w-full">
+          <input
+            id="task-subject"
+            type="text"
+            name="task-subject"
+            placeholder="عنوان تسک"
+            class="border-none w-full m-4 focus:outline-none placeholder:font-bold placeholder:font-[YekanBakhReg] placeholder:text-gray-500 dark:text-white"
+          />
+          <textarea
+            id="task-describtion"
+            rows="2"
+            cols="95"
+            name="task-describtion"
+            placeholder="توضیحات"
+            class="border-none resize-none mx-4 appearance-none placeholder:font-[YekanBakhReg] placeholder:text-gray-400 focus:outline-none dark:text-white"
+          ></textarea>
+
+          <!-- تگ‌ها -->
+          <div id="tags-container" class="mb-5">
+            <button
+              id="tag-button"
+              type="button"
+              class="flex items-center gap-2 mx-4 mb-8 px-2.5 py-1 shadow-md cursor-pointer border-1 border-gray-300 font-[YekanBakhReg] text-gray-600/50 rounded-md hover:bg-gray-100 text-md dark:border dark:text-white dark:hover:bg-sky-700"
+            >
+              <svg
+                id="unselected-svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.51661 2.58331H13.0499C13.6166 2.58331 14.325 2.97498 14.625 3.45831L18.1083 9.02498C18.4416 9.56665 18.4083 10.4166 18.025 10.925L13.7083 16.675C13.4 17.0833 12.7333 17.4166 12.225 17.4166H3.51661C2.05828 17.4166 1.17498 15.8166 1.94165 14.575L4.24995 10.8833C4.55828 10.3916 4.55828 9.59165 4.24995 9.09998L1.94165 5.40831C1.17498 4.18331 2.06661 2.58331 3.51661 2.58331Z"
+                  stroke="#AFAEB2"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <!-- selected mode -->
+              <svg
+                id="selected-svg"
+                class="hidden"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.418 3.51661V13.0499C17.418 13.6166 17.0263 14.325 16.543 14.625L10.9763 18.1083C10.4346 18.4416 9.58464 18.4083 9.0763 18.025L3.3263 13.7083C2.91797 13.4 2.58464 12.7333 2.58464 12.225V3.51661C2.58464 2.05828 4.18464 1.17498 5.4263 1.94165L9.11797 4.24995C9.60963 4.55828 10.4096 4.55828 10.9013 4.24995L14.593 1.94165C15.818 1.17498 17.418 2.06661 17.418 3.51661Z"
+                  fill="#AFAEB2"
+                  stroke="#AFAEB2"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              تگ‌ها
+            </button>
+          </div>
+          <!-- گزینه‌های تگ -->
+          <div
+            id="tag-options"
+            class="w-fit mt-6 mx-4 mb-8 px-3 py-2 rounded-lg [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)] border-1 border-gray-300 hidden text-right flex gap-x-4"
+          >
+            <a class="close hidden" href="">&times;</a>
+            <button
+              id="easy"
+              type="button"
+              class="priority-btn bg-green-100 text-xs font-[YekanBakhReg] font-semibold px-2 py-1 cursor-pointer rounded-sm text-green-700 dark:bg-green-600 dark:text-white"
+            >
+              پایین
+            </button>
+            <svg
+              width="2"
+              height="21"
+              viewBox="0 0 2 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="0.546875"
+                y1="0.5"
+                x2="0.546875"
+                y2="20.5"
+                stroke="#EBEDEF"
+              />
+            </svg>
+            <button
+              id="medium"
+              type="button"
+              class="priority-btn bg-yellow-100 text-xs font-[YekanBakhReg] font-semibold px-2 py-1 cursor-pointer rounded-sm text-yellow-700 dark:bg-yellow-500 dark:text-white"
+            >
+              متوسط
+            </button>
+            <svg
+              width="2"
+              height="21"
+              viewBox="0 0 2 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="0.546875"
+                y1="0.5"
+                x2="0.546875"
+                y2="20.5"
+                stroke="#EBEDEF"
+              />
+            </svg>
+            <button
+              id="high"
+              type="button"
+              class="priority-btn bg-red-100 text-xs font-[YekanBakhReg] font-semibold px-2 py-1 cursor-pointer rounded-sm text-red-700 dark:bg-red-500 dark:text-white"
+            >
+              بالا
+            </button>
+          </div>
+          <hr class="border-gray-300" />
+          <!-- دکمه -->
+          <div>
+            <button
+              id="add-task-btn"
+              type="submit"
+              disabled
+              class="mb-5 mt-5 mr-150 bg-blue-300 font-[YekanBakhReg] cursor-not-allowed text-white px-4 py-2 rounded-md transition-colors"
+            >
+              اضافه کردن تسک
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- added task -->
+      <div id="tasks-container" class="space-y-4 mx-auto">
+        <section
+          class="pr-line relative before:!border-red-500 flex items-start p-6 pr-5 rounded-xl border-1 border-gray-300 dark:bg-gray-800 dark:border"
+        >
+          <!-- چک‌باکس -->
+
+          <input id="input-task" type="checkbox" class="ml-3 w-5 h-5" />
+
+          <!-- محتوای داخل هر تسک -->
+          <div class="flex-1">
+            <div class="flex items-center gap-x-2 mb-3">
+              <h3
+                class="font-extrabold font-[YekanBakhReg] text-gray-800 dark:text-white"
+                id="task-title"
+              >
+                جلسه با مدیران پروژه
+              </h3>
+              <!-- اولویت تسک -->
+              <span
+                class="text-xs font-[YekanBakhReg] bg-red-100 text-red-600 px-2 py-0.5 rounded-sm"
+                id="task-importance"
+                >بالا</span
+              >
+            </div>
+            <p
+              class="mb-3 text-sm font-[YekanBakhReg] text-gray-500 dark:text-gray-300"
+            >
+              جلسه با محسن یگانه و مریم جلالی
+            </p>
+          </div>
+
+          <!-- آیکون سه‌نقطه -->
+          <svg
+            id="task-item-menu"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 text-gray-500 dark:text-gray-300 cursor-pointer"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <circle cx="10" cy="4" r="1.5" />
+            <circle cx="10" cy="10" r="1.5" />
+            <circle cx="10" cy="16" r="1.5" />
+          </svg>
+
+          <div
+            id="task-item-ops"
+            class="hidden absolute left-7 bottom-5 flex gap-x-2 mt-5 p-1 rounded-md border-1 border-gray-300 [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)]"
+          >
+            <div id="delete-task-btn" class="cursor-pointer">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 7H20M5 7L6 19C6 19.5304 6.21071 20.0391 6.58579 20.4142C6.96086 20.7893 7.46957 21 8 21H16C16.5304 21 17.0391 20.7893 17.4142 20.4142C17.7893 20.0391 18 19.5304 18 19L19 7M9 7V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3H14C14.2652 3 14.5196 3.10536 14.7071 3.29289C14.8946 3.48043 15 3.73478 15 4V7M10 12L14 16M14 12L10 16"
+                  stroke="#5C5F61"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <svg
+                width="2"
+                height="21"
+                viewBox="0 0 2 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.546875"
+                  y1="0.5"
+                  x2="0.546875"
+                  y2="20.5"
+                  stroke="#EBEDEF"
+                />
+              </svg>
+            </div>
+            <div id="edit-task-btn" class="cursor-pointer">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 7H6C5.46957 7 4.96086 7.21071 4.58579 7.58579C4.21071 7.96086 4 8.46957 4 9V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H15C15.5304 20 16.0391 19.7893 16.4142 19.4142C16.7893 19.0391 17 18.5304 17 18V17"
+                  stroke="#5C5F61"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16 4.99998L19 7.99998M20.385 6.58499C20.7788 6.19114 21.0001 5.65697 21.0001 5.09998C21.0001 4.543 20.7788 4.00883 20.385 3.61498C19.9912 3.22114 19.457 2.99988 18.9 2.99988C18.343 2.99988 17.8088 3.22114 17.415 3.61498L9 12V15H12L20.385 6.58499Z"
+                  stroke="#5C5F61"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
     <script src="./vendor/FontAwesome5/all.min.js"></script>
     <script src="./src/app.js"></script>
