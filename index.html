@@ -65,7 +65,7 @@
           <h1 id="min-nav-container-left-heading" class="head-modal hidden">
             کوئرا لیست
           </h1>
-          <a class="close hidden" href="#">&times;</a>
+          <a class="close-aside hidden" href="#">&times;</a>
           <div class="menu-items">
             <div id="home" class="item1">
               <div
@@ -564,8 +564,8 @@
       </div>
       <!-- FORM WRAPPER to add new task -->
       <div
-        id="add-task-form"
-        class="hidden relative dark:border border-1 border-gray-300 rounded-xl [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)]"
+        id="add-task-contianer"
+        class="hidden relative overflow-hidden dark:border border-1 border-gray-300 rounded-xl [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)]"
       >
         <!-- CLOSE BUTTON -->
         <div id="close-form">
@@ -576,7 +576,7 @@
 
         <!-- FORM-->
         <!-- بخش نوشتن تسک جدید -->
-        <form id="add-task-form" action="" class="w-full">
+        <form id="add-task-form" name="adding-tasks" action="" class="w-full">
           <input
             id="task-subject"
             type="text"
@@ -645,14 +645,13 @@
             id="tag-options"
             class="w-fit mt-6 mx-4 mb-8 px-3 py-2 rounded-lg [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)] border-1 border-gray-300 hidden text-right flex gap-x-4"
           >
-            <a class="close hidden" href="">&times;</a>
-            <button
+            <a class="close-tags hidden" href="#">&times;</a>
+            <span
               id="easy"
-              type="button"
               class="priority-btn bg-green-100 text-xs font-[YekanBakhReg] font-semibold px-2 py-1 cursor-pointer rounded-sm text-green-700 dark:bg-green-600 dark:text-white"
             >
               پایین
-            </button>
+            </span>
             <svg
               width="2"
               height="21"
@@ -668,13 +667,12 @@
                 stroke="#EBEDEF"
               />
             </svg>
-            <button
+            <span
               id="medium"
-              type="button"
               class="priority-btn bg-yellow-100 text-xs font-[YekanBakhReg] font-semibold px-2 py-1 cursor-pointer rounded-sm text-yellow-700 dark:bg-yellow-500 dark:text-white"
             >
               متوسط
-            </button>
+            </span>
             <svg
               width="2"
               height="21"
@@ -690,13 +688,12 @@
                 stroke="#EBEDEF"
               />
             </svg>
-            <button
+            <span
               id="high"
-              type="button"
               class="priority-btn bg-red-100 text-xs font-[YekanBakhReg] font-semibold px-2 py-1 cursor-pointer rounded-sm text-red-700 dark:bg-red-500 dark:text-white"
             >
               بالا
-            </button>
+            </span>
           </div>
           <hr class="border-gray-300" />
           <!-- دکمه -->
@@ -705,7 +702,7 @@
               id="add-task-btn"
               type="submit"
               disabled
-              class="mb-5 mt-5 mr-150 bg-blue-300 font-[YekanBakhReg] cursor-not-allowed text-white px-4 py-2 rounded-md transition-colors"
+              class="mb-5 mt-5 mr-150 bg-blue-300 cursor-not-allowed font-[YekanBakhReg] text-white px-4 py-2 rounded-md transition-colors"
             >
               اضافه کردن تسک
             </button>
