@@ -1,0 +1,10 @@
+.pr-line:before {
+  content: "";
+  position: absolute;
+  right: -4.5%;
+  bottom: 10.5%;
+  height: 90px;
+  width: 5%;
+  border-left: 4px solid;
+  border-radius: 3px;
+}
