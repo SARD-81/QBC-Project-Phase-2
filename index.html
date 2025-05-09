@@ -65,7 +65,7 @@
           <h1 id="min-nav-container-left-heading" class="head-modal hidden">
             کوئرا لیست
           </h1>
-          <a class="close-aside hidden" href="#">&times;</a>
+          <a class="close hidden" href="#">&times;</a>
           <div class="menu-items">
             <div id="home" class="item1">
               <div
@@ -564,8 +564,8 @@
       </div>
       <!-- FORM WRAPPER to add new task -->
       <div
-        id="add-task-contianer"
-        class="hidden relative overflow-hidden dark:border border-1 border-gray-300 rounded-xl [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)]"
+        id="add-task-form"
+        class="hidden relative dark:border border-1 border-gray-300 rounded-xl [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)]"
       >
         <!-- CLOSE BUTTON -->
         <div id="close-form">
@@ -576,7 +576,7 @@
 
         <!-- FORM-->
         <!-- بخش نوشتن تسک جدید -->
-        <form id="add-task-form" name="adding-tasks" action="" class="w-full">
+        <form id="add-task-form" action="" class="w-full">
           <input
             id="task-subject"
             type="text"
@@ -585,10 +585,10 @@
             class="border-none w-full m-4 focus:outline-none placeholder:font-bold placeholder:font-[YekanBakhReg] placeholder:text-gray-500 dark:text-white"
           />
           <textarea
-            id="task-describtion"
+            id="task-description"
             rows="2"
             cols="95"
-            name="task-describtion"
+            name="task-description"
             placeholder="توضیحات"
             class="border-none resize-none mx-4 appearance-none placeholder:font-[YekanBakhReg] placeholder:text-gray-400 focus:outline-none dark:text-white"
           ></textarea>
@@ -617,7 +617,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <!-- selected mode -->
+              <!-- selected mode. -->
               <svg
                 id="selected-svg"
                 class="hidden"
@@ -645,13 +645,15 @@
             id="tag-options"
             class="w-fit mt-6 mx-4 mb-8 px-3 py-2 rounded-lg [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)] border-1 border-gray-300 hidden text-right flex gap-x-4"
           >
-            <a class="close-tags hidden" href="#">&times;</a>
-            <span
+            <a class="close hidden" href="">&times;</a>
+            <button
               id="easy"
+              type="button"
               class="priority-btn bg-green-100 text-xs font-[YekanBakhReg] font-semibold px-2 py-1 cursor-pointer rounded-sm text-green-700 dark:bg-green-600 dark:text-white"
+              data-color="bg-green-100 text-green-700"
             >
               پایین
-            </span>
+            </button>
             <svg
               width="2"
               height="21"
@@ -667,12 +669,14 @@
                 stroke="#EBEDEF"
               />
             </svg>
-            <span
+            <button
               id="medium"
+              type="button"
               class="priority-btn bg-yellow-100 text-xs font-[YekanBakhReg] font-semibold px-2 py-1 cursor-pointer rounded-sm text-yellow-700 dark:bg-yellow-500 dark:text-white"
+              data-color="bg-yellow-100 text-yellow-700"
             >
               متوسط
-            </span>
+            </button>
             <svg
               width="2"
               height="21"
@@ -688,12 +692,14 @@
                 stroke="#EBEDEF"
               />
             </svg>
-            <span
+            <button
               id="high"
+              type="button"
               class="priority-btn bg-red-100 text-xs font-[YekanBakhReg] font-semibold px-2 py-1 cursor-pointer rounded-sm text-red-700 dark:bg-red-500 dark:text-white"
+              data-color="bg-red-100 text-red-700"
             >
               بالا
-            </span>
+            </button>
           </div>
           <hr class="border-gray-300" />
           <!-- دکمه -->
@@ -701,8 +707,7 @@
             <button
               id="add-task-btn"
               type="submit"
-              disabled
-              class="mb-5 mt-5 mr-150 bg-blue-300 cursor-not-allowed font-[YekanBakhReg] text-white px-4 py-2 rounded-md transition-colors"
+              class="mb-5 mt-5 mr-150 bg-blue-300 font-[YekanBakhReg] text-white px-4 py-2 rounded-md transition-colors"
             >
               اضافه کردن تسک
             </button>
@@ -710,8 +715,8 @@
         </form>
       </div>
       <!-- added task -->
-      <div id="tasks-container" class="space-y-4 mx-auto">
-        <section
+      <div id="tasks-container" class="space-y-4 mx-auto hidden">
+        <section id="task-template"
           class="pr-line relative before:!border-red-500 flex items-start p-6 pr-5 rounded-xl border-1 border-gray-300 dark:bg-gray-800 dark:border"
         >
           <!-- چک‌باکس -->
@@ -719,7 +724,7 @@
           <input id="input-task" type="checkbox" class="ml-3 w-5 h-5" />
 
           <!-- محتوای داخل هر تسک -->
-          <div class="flex-1">
+          <div class="flex-1 >
             <div class="flex items-center gap-x-2 mb-3">
               <h3
                 class="font-extrabold font-[YekanBakhReg] text-gray-800 dark:text-white"
@@ -736,13 +741,11 @@
             </div>
             <p
               class="mb-3 text-sm font-[YekanBakhReg] text-gray-500 dark:text-gray-300"
+              id="task-desc"
             >
               جلسه با محسن یگانه و مریم جلالی
             </p>
-          </div>
-
-          <!-- آیکون سه‌نقطه -->
-          <svg
+            <svg
             id="task-item-menu"
             xmlns="http://www.w3.org/2000/svg"
             class="w-5 h-5 text-gray-500 dark:text-gray-300 cursor-pointer"
@@ -753,6 +756,10 @@
             <circle cx="10" cy="10" r="1.5" />
             <circle cx="10" cy="16" r="1.5" />
           </svg>
+          </div>
+
+          <!-- آیکون سه‌نقطه -->
+    
 
           <div
             id="task-item-ops"
@@ -822,5 +829,6 @@
     </main>
     <script src="./vendor/FontAwesome5/all.min.js"></script>
     <script src="./src/app.js"></script>
-  </body>
+
+</body>
 </html>
