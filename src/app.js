@@ -1,4 +1,5 @@
 const $ = document;
+let allTasks = [];
 /* start set the current date */
 const date = new Date(); //define date obj
 const weekday = new Intl.DateTimeFormat("fa-IR-u-ca-persian", {
@@ -11,6 +12,11 @@ $.addEventListener("DOMContentLoaded", () => {
     day: "numeric",
   }); // define the structure of persian date
   $.querySelector("#date").textContent = `${weekday}، ${persianDate}`;
+  if (allTasks.length !== 0) {
+    $.querySelector(
+      "#task-counter"
+    ).innerHTML = `${allTasks.length} تسک را باید انجام دهید`;
+  }
 }); //load the current persian date by every load of page
 /* finish set the current date */
 
@@ -48,6 +54,10 @@ lightBtn.addEventListener("click", () => {
 /* finish handle dark mode of website */
 
 /* start handle the add task modal */
+const taskSubject = $.getElementById("task-subject");
+const taskDescription = $.getElementById("task-describtion");
+const addTaskBtn = $.getElementById("add-task-btn");
+
 const siblings = (elem) => {
   // create an empty array
   let siblings = [];
@@ -69,27 +79,40 @@ const siblings = (elem) => {
   } while ((sibling = sibling.nextElementSibling));
 
   return siblings;
-};
+}; //function to get the siblings of element
+function validateForm() {
+  const isSubjectValid = taskSubject.value.trim().length > 0;
+  const isDescValid = taskDescription.value.trim().length > 0;
+  const isTagSelected =
+    !$.getElementById("tag-options").classList.contains("px-3");
+
+  if (isSubjectValid && isDescValid && isTagSelected) {
+    addTaskBtn.disabled = false;
+    addTaskBtn.classList.remove("bg-blue-300", "cursor-not-allowed");
+    addTaskBtn.classList.add("bg-blue-600", "cursor-pointer");
+  } else {
+    addTaskBtn.disabled = true;
+    addTaskBtn.classList.add("bg-blue-300", "cursor-not-allowed");
+    addTaskBtn.classList.remove("bg-blue-600", "cursor-pointer");
+  }
+} //function to validate form to active the form button
 
 $.querySelector("#add-new-sec").addEventListener("click", () => {
   $.querySelector("#add-tasks-btn").classList.add("hidden");
   $.querySelector("#img-holder").classList.add("hidden");
-  $.querySelector("#add-task-form").classList.remove("hidden");
-});
+  $.querySelector("#add-task-contianer").classList.remove("hidden");
+  $.querySelector("#add-task-btn").classList.add("bg-blue-300");
+}); //open add task modal
 
-$.querySelector("#close-form").addEventListener("click", resetAddTaskForm);
+$.querySelector("#close-form").addEventListener("click", resetAddTaskForm); //close add task modal
 
 $.getElementById("tag-button").addEventListener("click", () => {
   $.getElementById("tag-options").classList.toggle("hidden");
   $.getElementById("unselected-svg").classList.toggle("hidden");
   $.getElementById("selected-svg").classList.toggle("hidden");
-});
+}); //open the tag box to select the tag
 
-$.querySelector("#task-item-menu").addEventListener("click", () => {
-  $.querySelector("#task-item-ops").classList.toggle("hidden");
-});
-
-const priorityBtns = Array.from($.querySelectorAll(".priority-btn"));
+const priorityBtns = Array.from($.querySelectorAll(".priority-btn")); //select all tag in DOM
 
 priorityBtns.map((items) => {
   items.addEventListener("click", () => {
@@ -106,13 +129,16 @@ priorityBtns.map((items) => {
     $.querySelector("#tag-options").classList.remove("border-1");
     $.querySelector("#tag-options").classList.remove("border-gray-300");
     $.querySelector("#tag-options").classList.add(contColor);
-    $.querySelector(".close").classList.remove("hidden");
+    $.querySelector(".close-tags").classList.remove("hidden");
+    validateForm();
   });
-});
+}); //handle the selecting tag
+
+$.querySelector(".close-tags").addEventListener("click", resetTagsContainer); //close and reset the tag box
 
 function resetAddTaskForm() {
   $.querySelector("#add-tasks-btn").classList.remove("hidden");
-  $.querySelector("#add-task-form").classList.add("hidden");
+  $.querySelector("#add-task-contianer").classList.add("hidden");
   $.getElementById("tag-options").classList.add("hidden");
   $.getElementById("selected-svg").classList.add("hidden");
   $.getElementById("unselected-svg").classList.remove("hidden");
@@ -121,6 +147,12 @@ function resetAddTaskForm() {
   $.querySelector("#tag-options").classList.add("py-2");
   $.querySelector("#tag-options").classList.add("border-1");
   $.querySelector("#tag-options").classList.add("border-gray-300");
+  $.querySelector("#add-task-btn").classList.add("cursor-not-allowed");
+  $.querySelector("#add-task-btn").classList.remove("bg-blue-600");
+  $.querySelector("#add-task-btn").classList.remove("cursor-pointer");
+  $.querySelector("#add-task-btn").disabled = true;
+  $.querySelector("#task-subject").value = "";
+  $.querySelector("#task-describtion").value = "";
   priorityBtns.map((items) => {
     siblings(items).map((item) => {
       item.classList.remove("hidden");
@@ -133,16 +165,46 @@ function resetAddTaskForm() {
   filterElemClass.map((cl) => {
     $.querySelector("#tag-options").classList.add(cl);
   });
-  $.querySelector(".close").classList.add("hidden");
-}
-/* finish handle the add task modal */
-/////////////////////////////////
-$.querySelector("#add-task-form").addEventListener("submit", (e) => {
-  e.preventDefault();
-});
-/////////////////////////////////
+  $.querySelector(".close-tags").classList.add("hidden");
+  if (allTasks.length === 0) {
+    $.querySelector("#img-holder").classList.remove("hidden");
+  }
+} //function to reset the styles of add task form
 
-// متغیر برای ذخیره‌ی اطلاعات تگ انتخاب‌شده
+function resetTagsContainer() {
+  $.querySelector("#tags-container").classList.remove("hidden");
+  $.querySelector("#tag-options").classList.add("px-3");
+  $.querySelector("#tag-options").classList.add("py-2");
+  $.querySelector("#tag-options").classList.add("border-1");
+  $.querySelector("#tag-options").classList.add("border-gray-300");
+  $.querySelector("#add-task-btn").classList.add("cursor-not-allowed");
+  $.querySelector("#add-task-btn").classList.remove("cursor-pointer");
+  $.querySelector("#add-task-btn").disabled = true;
+  if ($.querySelector("#add-task-btn").classList.contains("bg-blue-600")) {
+    $.querySelector("#add-task-btn").classList.remove("bg-blue-600");
+    $.querySelector("#add-task-btn").classList.add("bg-blue-300");
+  } else {
+    $.querySelector("#add-task-btn").classList.add("bg-blue-300");
+  }
+  priorityBtns.map((items) => {
+    siblings(items).map((item) => {
+      item.classList.remove("hidden");
+    });
+  });
+  let elemClass = [...$.querySelector("#tag-options").classList];
+  let filterElemClass = elemClass.filter((a) => !a.includes("bg-"));
+  $.querySelector("#tag-options").setAttribute("class", "");
+  filterElemClass.map((cl) => {
+    $.querySelector("#tag-options").classList.add(cl);
+  });
+  $.querySelector(".close-tags").classList.add("hidden");
+} //function to reset the styles of tags
+
+taskSubject.addEventListener("input", validateForm);
+taskDescription.addEventListener("input", validateForm); //check the real-time changes of inputs field
+/* finish handle the add task modal */
+
+/* start handling task obj */
 let selectedTag = {
   text: "پایین", // مقدار پیش‌فرض
   class: "bg-green-100 text-green-700",
@@ -156,6 +218,7 @@ document.querySelectorAll(".priority-btn").forEach((btn) => {
     selectedTag.class = this.getAttribute("data-color");
   });
 });
+
 // for managing our tasks
 class Tasks {
   static count = 0;
@@ -164,62 +227,82 @@ class Tasks {
     this.id = ++Tasks.count;
     this.title = title;
     this.description = description;
+    this.complete = false;
     this.tagText = tag.text;
     this.tagClass = tag.class;
   }
 
   render() {
     //دریافت قالب طراحی شده برای هر تسک
-    const taskTemplate = document.getElementById("task-template");
-    const taskContainer = document.getElementById("tasks-container");
+    const taskTemplate = $.getElementById("task-template");
+    const taskContainer = $.getElementById("tasks-container");
 
     // کلون قالب تسک
     const taskClone = taskTemplate.cloneNode(true); //true: means that cloning prants wit all of its child
-    taskClone.removeAttribute("id");
+    taskClone.setAttribute("id", `task${this.id}`);
+    taskClone.classList.remove("hidden");
 
     // مقداردهی به عناصر
     taskClone.querySelector("#task-title").innerText = this.title;
     taskClone.querySelector("#task-desc").innerText = this.description;
 
     const importanceSpan = taskClone.querySelector("#task-importance");
+
     importanceSpan.innerText = this.tagText;
     importanceSpan.className =
       "text-xs px-2 py-0.5 rounded-sm font-[YekanBakhReg] " + this.tagClass;
+    switch (importanceSpan.innerText) {
+      case "پایین":
+        taskClone.classList.add("before:!border-green-500");
+        importanceSpan.classList.add("bg-green-100");
+        importanceSpan.classList.add("text-green-700");
+        break;
+      case "متوسط":
+        taskClone.classList.add("before:!border-yellow-500");
+        importanceSpan.classList.add("bg-yellow-100");
+        importanceSpan.classList.add("text-yellow-700");
+        break;
+      case "بالا":
+        taskClone.classList.add("before:!border-red-500");
+        importanceSpan.classList.add("bg-red-100");
+        importanceSpan.classList.add("text-red-700");
+        break;
+
+      default:
+        break;
+    } //define the color of prority line and color of the priority box of tasks
 
     taskContainer.appendChild(taskClone);
     taskContainer.classList.remove("hidden");
   }
   isDone() {
-    //we use if to detect the dom that task is tiked or not
-    //and if is tiked we call this method for instances and
-    // change the dom with this method
+    //TODO : should change the this.complete to true and render it in #completed-task-container in DOM
   }
 
-  deleteTasks() {}
+  deleteTasks() {
+    //TODO : should delete task
+  }
 }
 
 // اضافه کردن تسک کلیک روی دکمه
-document
-  .getElementById("add-task-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
+$.getElementById("add-task-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    const title = document.getElementById("task-subject").value.trim();
-    const desc = document.getElementById("task-description").value.trim();
+  const title = taskSubject.value.trim();
+  const desc = taskDescription.value.trim();
 
-    if (!title || !desc) {
-      alert("عنوان و توضیحات را وارد کنید.");
-      return;
-    }
+  const newTask = new Tasks(title, desc, selectedTag);
+  newTask.render();
+  allTasks.push(newTask); //save all tasks in array
+  // let allTasksString = JSON.string(allTasks);
+  // localStorage.setItem("Tasks", allTasksString);
+  console.log(allTasks);
 
-    const newTask = new Tasks(title, desc, selectedTag);
-    newTask.render();
+  // پاک کردن فرم
+  resetAddTaskForm();
+  $.querySelector(
+    "#task-counter"
+  ).innerHTML = `${allTasks.length} تسک را باید انجام دهید`; //count and change the task container text
+});
 
-    // پاک کردن فرم
-    e.target.reset();
-
-    selectedTag = {
-      text: "پایین",
-      class: "bg-green-100 text-green-700",
-    };
-  });
+/* finish handling task obj */
