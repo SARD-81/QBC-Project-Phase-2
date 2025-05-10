@@ -12,11 +12,6 @@ $.addEventListener("DOMContentLoaded", () => {
     day: "numeric",
   }); // define the structure of persian date
   $.querySelector("#date").textContent = `${weekday}، ${persianDate}`;
-  if (allTasks.length !== 0) {
-    $.querySelector(
-      "#task-counter"
-    ).innerHTML = `${allTasks.length} تسک را باید انجام دهید`;
-  }
 }); //load the current persian date by every load of page
 /* finish set the current date */
 
@@ -271,7 +266,6 @@ class Tasks {
       default:
         break;
     } //define the color of prority line and color of the priority box of tasks
-
     taskContainer.appendChild(taskClone);
     taskContainer.classList.remove("hidden");
   }
@@ -280,7 +274,11 @@ class Tasks {
   }
 
   deleteTasks() {
-    //TODO : should delete task
+    //TODO : should delete tasks
+  }
+
+  editeTasks() {
+    //TODO : should edite tasks
   }
 }
 
@@ -294,9 +292,20 @@ $.getElementById("add-task-form").addEventListener("submit", function (e) {
   const newTask = new Tasks(title, desc, selectedTag);
   newTask.render();
   allTasks.push(newTask); //save all tasks in array
-  // let allTasksString = JSON.string(allTasks);
-  // localStorage.setItem("Tasks", allTasksString);
-  console.log(allTasks);
+  const priorityOrder = ["بالا", "متوسط", "پایین"];
+  allTasks.sort(
+    (a, b) =>
+      priorityOrder.indexOf(a.tagText) - priorityOrder.indexOf(b.tagText)
+  ); //sort array by priority
+  const taskTemplate = $.getElementById("task-template");
+  siblings(taskTemplate).map((elem) => {
+    elem.remove();
+  }); //remove template sibling to update task container and sort them by priority
+  allTasks.forEach((task) => task.render());
+
+  let allTasksString = JSON.stringify(allTasks);
+  localStorage.setItem("Tasks", allTasksString);
+  // console.log(allTasks);
 
   // پاک کردن فرم
   resetAddTaskForm();
@@ -305,4 +314,33 @@ $.getElementById("add-task-form").addEventListener("submit", function (e) {
   ).innerHTML = `${allTasks.length} تسک را باید انجام دهید`; //count and change the task container text
 });
 
+function showTaskOpt(elem) {
+  elem.nextElementSibling.classList.toggle("hidden");
+} //function to show task options like delete task and edit
 /* finish handling task obj */
+
+/* start handle localstorage for tasks */
+window.addEventListener("load", () => {
+  const storedTasks = JSON.parse(localStorage.getItem("Tasks")) || [];
+  allTasks = storedTasks.map((t) => {
+    const task = Object.create(Tasks.prototype);
+    Object.assign(task, t);
+    return task;
+  }); //read task from localstorage and create Task obj
+  Tasks.count = allTasks.reduce((max, t) => Math.max(max, t.id), 0); //continue the task id from last task id
+  const priorityOrder = ["بالا", "متوسط", "پایین"];
+  allTasks.sort(
+    (a, b) =>
+      priorityOrder.indexOf(a.tagText) - priorityOrder.indexOf(b.tagText)
+  );
+  allTasks.forEach((task) => task.render()); //sort and render tasks by priority
+
+  if (allTasks.length > 0) {
+    $.querySelector(
+      "#task-counter"
+    ).textContent = `${allTasks.length} تسک را باید انجام دهید`;
+    $.querySelector("#img-holder").classList.add("hidden");
+    $.querySelector("#tasks-container").classList.remove("hidden");
+  }
+});
+/* finish handle localstorage for tasks */
