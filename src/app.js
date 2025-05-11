@@ -273,14 +273,88 @@ class Tasks {
     //TODO : should change the this.complete to true and render it in #completed-task-container in DOM
   }
 
-  deleteTasks() {
-    //TODO : should delete tasks
+  deleteTask() {
+    const taskIndex = allTasks.findIndex((task) => task.id === this.id);
+    if (taskIndex !== -1) {
+      allTasks.splice(taskIndex, 1);
+      localStorage.setItem("Tasks", JSON.stringify(allTasks));
+      document.getElementById(`task${this.id}`).remove();
+      $.querySelector(
+        "#task-counter"
+      ).textContent = `${allTasks.length} تسک را باید انجام دهید`;
+      if (allTasks.length === 0) {
+        $.querySelector("#img-holder").classList.remove("hidden");
+      }
+    }
   }
+  editTask() {
+    taskSubject.value = this.title;
+    taskDescription.value = this.description;
+    $.querySelector("#add-task-contianer").classList.remove("hidden");
+    addTaskBtn.textContent = "ویرایش";
 
-  editeTasks() {
-    //TODO : should edite tasks
+    addTaskBtn.onclick = (e) => {
+      e.preventDefault();
+      // به‌روزرسانی عنوان، توضیحات و تگ
+      this.title = taskSubject.value;
+      this.description = taskDescription.value;
+      this.tagText = selectedTag.text;
+      this.tagClass = selectedTag.class;
+
+      // به‌روزرسانی DOM
+      const taskElement = document.getElementById(`task${this.id}`);
+      taskElement.querySelector("#task-title").innerText = this.title;
+      taskElement.querySelector("#task-desc").innerText = this.description;
+
+      // به‌روزرسانی تگ و رنگ
+      const importanceSpan = taskElement.querySelector("#task-importance");
+      importanceSpan.innerText = this.tagText;
+      importanceSpan.className =
+        "text-xs px-2 py-0.5 rounded-sm font-[YekanBakhReg] " + this.tagClass;
+
+      // تغییر رنگ بر اساس اولویت
+      switch (this.tagText) {
+        case "پایین":
+          taskElement.classList.add("before:!border-green-500");
+          importanceSpan.classList.add("bg-green-100", "text-green-700");
+          break;
+        case "متوسط":
+          taskElement.classList.add("before:!border-yellow-500");
+          importanceSpan.classList.add("bg-yellow-100", "text-yellow-700");
+          break;
+        case "بالا":
+          taskElement.classList.add("before:!border-red-500");
+          importanceSpan.classList.add("bg-red-100", "text-red-700");
+          break;
+        default:
+          break;
+      }
+
+      // ذخیره تغییرات
+      localStorage.setItem("Tasks", JSON.stringify(allTasks));
+
+      // بازنشانی فرم
+      addTaskBtn.textContent = "اضافه کردن تسک";
+      resetAddTaskForm();
+    };
   }
 }
+
+// 🌟 مدیریت رویدادهای کلیک برای حذف و ویرایش (Event Delegation)
+const tasksContainer = $.getElementById("tasks-container");
+tasksContainer.addEventListener("click", (e) => {
+  const taskElement = e.target.closest("section");
+  if (taskElement) {
+    const taskId = parseInt(taskElement.id.replace("task", ""));
+    const task = allTasks.find((t) => t.id === taskId);
+
+    if (e.target.closest("#delete-task-btn")) {
+      task.deleteTask();
+    } else if (e.target.closest("#edit-task-btn")) {
+      task.editTask();
+    }
+  }
+});
 
 // اضافه کردن تسک کلیک روی دکمه
 $.getElementById("add-task-form").addEventListener("submit", function (e) {
