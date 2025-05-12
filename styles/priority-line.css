@@ -1,4 +1,4 @@
-.pr-line:before {
+.pr-line-incomplete:before {
   content: "";
   position: absolute;
   right: -4.5%;
@@ -7,4 +7,29 @@
   width: 5%;
   border-left: 4px solid;
   border-radius: 3px;
+}
+
+@media (max-width: 426px) {
+  .pr-line-incomplete:before {
+    right: -4%;
+    height: 100px;
+    bottom: 11.5%;
+  }
+}
+
+.pr-line-complete:before {
+  content: "";
+  position: absolute;
+  right: -4.5%;
+  bottom: 12.5%;
+  height: 60px;
+  width: 5%;
+  border-left: 4px solid;
+  border-radius: 3px;
+}
+
+@media (max-width: 426px) {
+  .pr-line-complete:before {
+    right: -4%;
+  }
 }

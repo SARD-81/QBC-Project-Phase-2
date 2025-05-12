@@ -25,7 +25,10 @@
     class="bg-[#FEFEFE] flex dark:bg-[#060c18] transition-colors duration-300"
   >
     <!-- NavBar Design (just for mobile) -->
-    <nav id="nav" class="hidden">
+    <nav
+      id="nav"
+      class="hidden bg-white dark:bg-[#091120] transition-colors duration-300"
+    >
       <!--NavBar Container-->
       <div id="min-nav-container">
         <div id="min-nav-container-right">
@@ -34,14 +37,19 @@
           /></a>
         </div>
         <div id="min-nav-container-left">
-          <h1 id="min-nav-container-left-heading">کوئرا لیست</h1>
+          <h1
+            id="min-nav-container-left-heading"
+            class="text-gray-800 dark:text-white transition-colors duration-300"
+          >
+            کوئرا لیست
+          </h1>
         </div>
       </div>
     </nav>
     <!-- Aside Design (panel) -->
     <aside
       id="aside"
-      class="inline-block m-7 pl-15 pr-7 pt-15 bg-[#FFF] [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)] dark:bg-[#091120] transition-colors duration-300"
+      class="inline-block h-fit m-7 pl-15 pr-7 pt-15 bg-[#FFF] [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)] dark:bg-[#060c18] transition-colors duration-300"
     >
       <!-- personal info section -->
       <div id="personal-info" class="pb-20">
@@ -60,9 +68,15 @@
         </div>
       </div>
       <!-- menu items section -->
-      <div id="main-menu-container" class="sidebar-modal">
+      <div
+        id="main-menu-container"
+        class="sidebar-modal bg-[#FFF] dark:bg-[#060c18] transition-colors duration-300"
+      >
         <div id="menu-items-container" class="pb-35">
-          <h1 id="min-nav-container-left-heading" class="head-modal hidden">
+          <h1
+            id="min-nav-container-left-heading"
+            class="head-modal hidden text-gray-800 dark:text-white transition-colors duration-300"
+          >
             کوئرا لیست
           </h1>
           <a class="close-aside hidden" href="#">&times;</a>
@@ -714,15 +728,15 @@
       <div id="tasks-container" class="space-y-4 mx-auto mt-7 hidden">
         <section
           id="task-template"
-          class="hidden pr-line relative flex items-start p-6 pr-5 rounded-xl border-1 border-gray-300 dark:bg-gray-800 dark:border"
+          class="hidden pr-line-incomplete relative flex items-start p-6 pr-5 rounded-xl border-1 border-gray-300 dark:bg-gray-800 dark:border"
         >
           <!-- چک‌باکس -->
 
-          <input id="input-task" type="checkbox" class="ml-3 w-5 h-5" />
+          <input id="task-checkbox" type="checkbox" class="ml-3 w-5 h-5" />
 
           <!-- محتوای داخل هر تسک -->
-          <div class="flex-1">
-            <div class="flex items-center gap-x-2 mb-3">
+          <div id="task-content-container" class="flex-1">
+            <div id="task-content" class="flex items-center gap-x-2 mb-3">
               <h3
                 class="font-extrabold font-[YekanBakhReg] text-gray-800 dark:text-white"
                 id="task-title"
@@ -733,8 +747,8 @@
               <span
                 class="text-xs font-[YekanBakhReg] bg-red-100 text-red-600 px-2 py-0.5 rounded-sm"
                 id="task-importance"
-                >بالا</span
-              >
+                >بالا
+              </span>
             </div>
             <p
               id="task-desc"
@@ -824,8 +838,93 @@
         </section>
       </div>
       <!-- completed task -->
-      <div id="completed-task-container">
+      <div
+        id="completed-task-container-header"
+        class="space-y-4 mx-auto mt-15 hidden"
+      >
+        <h2
+          class="mb-1.5 font-[YekanBakhBol] font-extrabold text-[20px] text-[#242424] dark:text-white"
+        >
+          تسک‌های انجام شده
+        </h2>
+        <p
+          id="compelete-task-counter"
+          class="pb-6 font-[YekanBakhReg] font-medium text-[14px] text-[#696969]"
+        >
+          تسکی هنوز انجام ندادی!
+        </p>
+      </div>
+      <div id="completed-task-container" class="space-y-4 mx-auto hidden">
         <!-- TODO : لطفا اینجا کار کنید مائده خانوم -->
+
+        <section
+          id="complete-task-template"
+          class="hidden pr-line-complete relative flex items-start p-6 pr-5 rounded-xl border-1 border-gray-300 dark:bg-gray-800 dark:border"
+        >
+          <!-- چک‌باکس -->
+
+          <input
+            id="complete-input-task"
+            type="checkbox"
+            class="ml-3 w-5 h-5"
+          />
+
+          <!-- محتوای داخل هر تسک -->
+          <div class="flex-1">
+            <div class="flex items-center gap-x-2 mb-3">
+              <h3
+                class="font-extrabold font-[YekanBakhReg] text-gray-800 line-through dark:text-white"
+                id="task-title"
+              >
+                جلسه با مدیران پروژه
+              </h3>
+              <!-- اولویت تسک -->
+              <span
+                class="hidden text-xs font-[YekanBakhReg] bg-red-100 text-red-600 px-2 py-0.5 rounded-sm"
+                id="complete-task-importance"
+                >بالا
+              </span>
+            </div>
+          </div>
+
+          <!-- آیکون سه‌نقطه -->
+          <div id="task-item-menu" onclick="showTaskOpt(this)">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-gray-500 dark:text-gray-300 cursor-pointer"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <circle cx="10" cy="4" r="1.5" />
+              <circle cx="10" cy="10" r="1.5" />
+              <circle cx="10" cy="16" r="1.5" />
+            </svg>
+          </div>
+
+          <div
+            id="task-item-ops"
+            class="hidden absolute left-7 bottom-0 flex mt-5 p-1 rounded-md border-1 border-gray-300 [box-shadow:0_2px_10px_rgba(0,_0,_0,_0.1)]"
+          >
+            <div id="delete-task-btn" class="cursor-pointer">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 7H20M5 7L6 19C6 19.5304 6.21071 20.0391 6.58579 20.4142C6.96086 20.7893 7.46957 21 8 21H16C16.5304 21 17.0391 20.7893 17.4142 20.4142C17.7893 20.0391 18 19.5304 18 19L19 7M9 7V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3H14C14.2652 3 14.5196 3.10536 14.7071 3.29289C14.8946 3.48043 15 3.73478 15 4V7M10 12L14 16M14 12L10 16"
+                  stroke="#5C5F61"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div></div>
+          </div>
+        </section>
       </div>
     </main>
     <script src="./vendor/FontAwesome5/all.min.js"></script>
